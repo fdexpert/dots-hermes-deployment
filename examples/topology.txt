@@ -1,0 +1,14 @@
+A（案例已驗證；example是新機占位）
+Dots
+  → example-caller Mac執行器（案例中介 Mac）
+  → stdio MCP a2a_bridge.py（完整來源未取得）
+  → example-hermes.example-tailnet.ts.net HTTPS10000（tailnet-only Serve）
+  → example-target Mac 127.0.0.1:9900 Hermes A2A/gateway（案例Hermes Mac）
+
+B（本機執行與HTTP已驗證，Hermes派工尚未驗證）
+Dots → example-target Mac執行器 → 經驗證本機client → 127.0.0.1:9900
+不需要中介Mac；純本機路徑不需要Serve。
+
+C（僅評估，未成功）
+Dots cloud runtime → userspace proxy/socket/egress/持久性待解 → tailnet
+不提供可部署承諾或啟動腳本。

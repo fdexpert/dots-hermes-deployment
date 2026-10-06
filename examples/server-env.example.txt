@@ -1,0 +1,10 @@
+# 非秘密變數範本；使用者在新機有效secret/profile來源增量加入。
+# 不可當完整.env直接覆蓋。
+A2A_HOST=127.0.0.1
+A2A_PORT=9900
+A2A_AGENT_NAME=hermes-example-target
+A2A_ALLOW_ALL_USERS=false
+# A部署且確認此版本支援時可設；B本機不需此URL。
+A2A_PUBLIC_URL=https://example-hermes.example-tailnet.ts.net:10000
+# 不設定A2A_TRUSTED_PEERS，由有效YAML的a2a.trusted_peers管理。
+# A2A_PEER_TOKENS另由使用者私密配置，這裡不含值。

@@ -1,0 +1,10 @@
+{
+  "name": "hermes-example-target",
+  "url": "http://127.0.0.1:9900/",
+  "version": "1.0.0",
+  "supportedInterfaces": [{"url": "http://127.0.0.1:9900/", "protocolBinding": "JSONRPC", "protocolVersion": "1.0"}],
+  "securitySchemes": {"bearer": {"type": "http", "scheme": "bearer"}},
+  "security": [{"bearer": []}],
+  "capabilities": {"streaming": false, "pushNotifications": false},
+  "skills": []
+}

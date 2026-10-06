@@ -1,0 +1,15 @@
+{
+  "architecture": "A",
+  "caller_id": "example-caller",
+  "target_alias": "example-target",
+  "target_identity": "hermes-example-target",
+  "reserved_local_identity": "example-local-bridge",
+  "base_url": "https://example-hermes.example-tailnet.ts.net:10000",
+  "listen_host": "127.0.0.1",
+  "a2a_port": 9900,
+  "serve_https_port": 10000,
+  "hermes_data_home": "/Users/example/.hermes",
+  "hermes_source": "/path/to/hermes-source",
+  "bridge_path": "/Users/example/.hermes-fleet/a2a_bridge.py",
+  "registry_path": "/Users/example/.hermes-fleet/agents.yaml"
+}

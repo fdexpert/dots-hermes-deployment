@@ -1,0 +1,6 @@
+# 具名最小信任；先完成獨立peer credential與trust再授權改false。
+# 保留有效config其他a2a keys，不移除local-readonly安全程式。
+a2a:
+  trusted_peers:
+    - example-caller
+  local_bridge_only: false
