@@ -2,7 +2,11 @@
 
 [繁體中文](OPERATIONS.md) | **English**
 
-The kit is a shareable secret-free project, **not a complete backup for restoring an existing machine**. The user separately stores server secrets, client registry, model access, tailnet login, and app pairing in controlled encrypted storage. No such backup was read or created while making this kit.
+The kit is a shareable secret-free project, **not a complete backup for restoring an existing machine**. The user separately stores server secrets, client registry, model access, tailnet login, and app pairing in controlled encrypted storage. Complete secret backups are excluded; later approved trust diagnostics projected related non-secret fields only, without creating secret backups.
+
+## Kit installer recovery
+
+The new bridge installer manages only app/venv/owner marker in a fresh prefix and always preserves config. Changed/unknown managed entries prevent uninstall. Partial failures retain private prefixes for inspection, not permission to delete unknown data or change real services. Keep state/tokens outside prefix; follow the [Mac mini guide](MAC_MINI_BRIDGE.en.md).
 
 ## Before deployment
 

@@ -23,3 +23,9 @@ __pycache__/
 .DS_Store
 dist/
 *.zip
+bridge-config.json
+.kit-install.json
+venv/
+receipts/
+private/
+runtime-state/

@@ -2,6 +2,8 @@
 
 [繁體中文](CONFIGURATION.md) | **English**
 
+The new bridge uses [bridge-config JSON](../examples/bridge-config.example.json), separate from the original registry below; see [Mac mini schema](MAC_MINI_BRIDGE.en.md). Installation does not modify the server; operators still merge server fields individually.
+
 ## Keep configuration separate
 
 | Template | Type | Placement / update |

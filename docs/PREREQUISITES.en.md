@@ -12,7 +12,7 @@ On 2026-10-06, the Hermes Mac ran macOS 26.6.2 on arm64. Kit tools were verified
 | Hermes | Compatible A2A schema and conflict-free official source; identify profile/runtime owner first | [Installation](https://hermes-agent.nousresearch.com/docs/getting-started/installation/), [official repo](https://github.com/NousResearch/hermes-agent), [A2A](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/a2a/). Hermes code is not included. |
 | Python | Kit tools require 3.11+; select Hermes Python according to its version's pyproject/package manager | [Python macOS downloads](https://www.python.org/downloads/macos/). Do not change the existing Hermes interpreter for this kit. |
 | Tailscale | For A, both ends in an authorized tailnet; CLI supports Serve HTTPS and background mode | [macOS download](https://tailscale.com/download/mac), [Serve CLI](https://tailscale.com/docs/reference/tailscale-cli/serve). Do not install multiple macOS distributions. |
-| stdio bridge | Required for A: full source, registry loader/schema, MCP client, dependency versions, and permission to use the source | Not obtained. Minimum Python/MCP SDK versions for the case bridge are unknown. |
+| stdio bridge | New kit bridge: Python 3.11–3.14/stdlib/explicit JSON schema; isolated installation per Mac mini guide | Mocks, real loopback health/card and one B task passed; new hardware/native Dots MCP untested. Original dependencies/schema still missing. |
 | Model provider | Working Hermes model access; user configures it personally on the new host | Use the Hermes installation flow and provider's private interface; keep credentials outside this project. |
 
 The Hermes installation page checked for this kit offers macOS desktop and CLI installation; the macOS desktop package is marked Apple Silicon. Official Linux, Windows, WSL, or other support does not verify this case's Dots × bridge × Serve path. This kit reports macOS arm64 case results only. Intel Mac, Windows, Linux, containers, and headless hosts need separate compatibility checks and all four acceptance layers. Do not copy launchd commands to another OS. [Official installation page](https://hermes-agent.nousresearch.com/docs/getting-started/installation/)
@@ -22,7 +22,7 @@ The Hermes installation page checked for this kit offers macOS desktop and CLI i
 1. Install/update ChatGPT desktop from official sources; the user signs in and connects the Dots computer.
 2. Choose one Hermes installation method from its official page. Check download source and version. Do not wire an installer into this kit for automatic execution; the operator performs installation and model authorization.
 3. For A, install Tailscale from its official macOS source and let the user sign in. The administrator checks HTTPS/MagicDNS and minimal caller→target:10000 grants/ACL. Do not configure public Funnel.
-4. Obtain bridge source before creating a separate Python environment matching its lockfile. Do not guess `mcp` / `httpx` versions or create a purported complete bridge.
+4. Install the new kit bridge in a pip-free isolated venv using the [Mac mini guide](MAC_MINI_BRIDGE.en.md); no guessed mcp/httpx dependency. Original case use still requires source/lockfile. The new implementation must not be presented as the original file.
 
 ## Read-only inventory
 

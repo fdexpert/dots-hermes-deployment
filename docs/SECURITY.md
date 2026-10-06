@@ -14,10 +14,10 @@
 ## 使用者親自配置的交接
 
 1. 操作者確定新機／caller 與受控設定檔的位置，先建立只有擁有者可讀的秘密儲存位置（kit 之外）。
-2. 由使用者在可信密碼管理工具／本機私密介面建立並放入新 token。本套件不生成、讀取、搬運或輪替現有 secret。
+2. 由使用者在可信密碼管理工具／本機私密介面建立並放入新 token。套件製作／安裝不生成、讀取、搬運或輪替現有secret。新bridge執行明確RPC時，可讀使用者親自準備的單一私人token檔或CLI隱藏輸入；不讀.env／舊registry。
 3. server 需要逗號分隔 `name:token` 的 `A2A_PEER_TOKENS`；每個身份有獨立值。它不是 JSON。只在本機私密編輯器中更新，保留已有合法項目。
 4. client registry 的 `agents.<target_alias>.token` 放同一配對的**原始 token**，不可加 `Bearer `、不可加 `caller:`。registry 留在 kit 外，擁有者權限應為 600 或等效限制。
-5. 不貼值回報；只回報「caller 已配置、trust 已核對、權限已確認」。如需認證診斷，工具用本機隱藏 prompt；若 getpass 無法隱藏輸入便拒絕。
+5. 不貼值回報；只回報「caller 已配置、trust 已核對、權限已確認」。認證診斷用本機隱藏prompt，getpass無法隱藏便拒絕。新bridge私人token檔／回覆輸出／state界線見[Mac mini流程](MAC_MINI_BRIDGE.md)。
 6. 使用者自己在新機設定 Hermes 模型供應商、Tailscale 登入與 app 帳號。不要將舊機 `.env`／整個 home 搬進可分享 kit。
 
 秘密格式只見 [增量設定說明](CONFIGURATION.md)；範本有明顯 placeholder，不能直接當可用憑證。`.gitignore` 是防誤納工具，不是秘密保管機制；本次 ZIP 另外採顯式 allowlist／內容掃描。

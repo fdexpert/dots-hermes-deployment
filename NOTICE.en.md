@@ -2,7 +2,7 @@
 
 [繁體中文](NOTICE.md) | **English**
 
-The kit's documentation, diagnostic/dry-run/validation scripts, and synthetic fixtures were created for this project. It references official links and necessary interface fields only. It does not include complete third-party bridge/Hermes code, MCP SDK, Tailscale software, Library transfer helpers, or their dependencies.
+The kit's documentation, original bridge/isolated-installer/diagnostic/dry-run/validation scripts, and synthetic fixtures were created for this project. It references official links and necessary interface fields only. It does not include complete third-party bridge/Hermes code, MCP SDK, Tailscale software, Library transfer helpers, or their dependencies.
 
 OpenAI, Hermes, Tailscale, GitHub, and Python names, trademarks, and third-party material remain the rights of their respective owners. Their software/source licenses are governed by the official projects. This notice does not transfer third-party licenses to the kit or authorize sharing a bridge without permission.
 

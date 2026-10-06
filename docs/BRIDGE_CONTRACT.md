@@ -2,7 +2,13 @@
 
 **繁體中文** | [English](BRIDGE_CONTRACT.en.md)
 
-## 已知契約（案例紀錄，非完整 schema）
+## 新 kit bridge（0.4.0實作）
+
+本專案新寫的scripts/bridge.py採明確JSON設定，不載入原agents.yaml。已知input schema在MCP tools/list與[Mac mini手冊](MAC_MINI_BRIDGE.md)：預設fleet_health/card，另啟用fleet_send（必須confirm_send:true）、fleet_get_task、fleet_find_context。
+
+已按同一非秘密checkout核對SendMessage同步回result.task、ROLE_USER/text parts/contextId/messageId；GetTask用params.id；ListTasks用contextId/pageSize/includeArtifacts。固定config URL，不跟card跨host；bearer只送該URL。原始碼與依賴均已包含（stdlib）；mock／隔離prefix及真Hermes loopback單次B派工通過。原生DotsMCP、新硬體與新bridge遠端A仍待驗收。
+
+## 原案例契約（歷史紀錄，非完整 schema）
 
 | 介面 | 已確認 | 未取得／應核對 |
 | --- | --- | --- |
@@ -13,7 +19,7 @@
 | 派工結果 | HTTP 200、TASK_STATE_COMPLETED、回覆文字、耗時、遠端 tool calls | schema／錯誤 mapping／task lookup完整流程 |
 | timeout | 案例同步等待約 300 秒，未知結果缺完整查回 | 不假設 server 的 GetTask 等於 bridge 已提供查回功能 |
 
-本套件不提供虛構 `fleet_ask(...)` 命令、不附替代 MCP server；診斷工具僅 health/card 與安全 auth probe，沒有派工能力。client registry 範本檔名明示 schema pending，不能直接當成已驗證 loader 輸入。
+本套件不虛構原fleet_ask命令／schema，也不冒稱新MCP server是原檔。diagnose不派工；自製bridge只有明確確認才SendMessage。client registry 範本檔名明示 schema pending，不能直接當成已驗證 loader 輸入。
 
 ## 來源取得後的準入檢查
 
@@ -24,4 +30,4 @@
 5. 無 token／peer 缺項／保留身份／不被 trust 的 caller均拒絕；有逾時／重啟時不自動重送未知派工。
 6. 本機 fixture/unit tests 與 syntax 通過後，另行授權一次 HERMES_OK，才可把「完整 A bridge 移植」標記完成。
 
-中介 Mac 目前未授權，不能 SSH 到該機取來源。若無來源，就保留此缺口，完成 server、電腦連線與診斷可完成的部分。
+中介 Mac 目前未授權，不能 SSH 到該機取來源。若選原檔而無來源，保留缺口；新kit bridge可依獨立schema安裝與驗收，不能聲稱移植原檔。

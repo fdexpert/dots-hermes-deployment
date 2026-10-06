@@ -66,19 +66,19 @@ tailscale serve status
 
 在 caller Mac 依實際新機 DNS 執行 health/card，先確認 TLS、agent name 與 card URL。[驗收](VALIDATION.md)
 
-## 6A. 取得、核對並安裝原 bridge
+## 6A. 安裝自製 kit bridge，或取得原案例 bridge
 
-由擁有者授權提供 中介 Mac 非秘密 bridge 原始碼／依賴／去秘密 schema。尚未取得，**目前不能完成新機 A 端到端 bridge 部署**；server／HTTP 準備不等於完整 bridge 已移植。
+新部署可選本專案的自製 bridge，依 [Mac mini 安裝流程](MAC_MINI_BRIDGE.md) 先 plan、再明確 apply 至新私人 prefix，手動配置 pinned URL／expected_name。先做 health/card，不自動派工。MCP transport是stdio；依所選client實際格式配置，無全域自動註冊。
 
-取得後先核對 caller_id、URL override、原始 token 讀取、MCP `tools/list` 的 `fleet_ask` 輸入 schema與逾時行為；依官方／原始 lockfile 建立獨立環境，不猜 dependency 版本。使用者在 kit 外新建真 registry，更新 target alias／URL／原始 peer token。
+使用者在kit與prefix外親自配置新caller原始token；只有完成server具名trust、保留身份限制、版本契約核對及另行授權，才使用明確send／query功能。新程式已經mock／隔離安裝驗證，尚未對真Hermes驗收，不冒稱原bridge已移植。
 
-依取得 bridge 的實際 MCP client 使用方式配置 **stdio** command／args（Python 路徑與 `.py` 路徑）；不把 A2A HTTPS URL當 HTTP MCP server 註冊。只 `tools/list` 核對 schema，避免自動呼叫派工。Dots 的連接電腦不自動讓所有 task 擁有此 tool；確認新 task 的 client／bridge 能力，才進行授權驗收。[契約](BRIDGE_CONTRACT.md)
+若選原案例fleet_ask路徑，仍須由擁有者授權提供非秘密來源／lockfile／registry loader／tools/list schema；未取得便停止這條原檔路徑。不能借未授權主機取檔，也不猜工具參數。[兩套契約與差異](BRIDGE_CONTRACT.md)
 
 ## 5B. Dots 直接連接 Hermes Mac
 
 在該機 ChatGPT app 的 dot profile → Computers → Your computer → Allow access，由使用者審閱並確認。維持機器醒著、上線、app 開啟。新建獨立本機 task，檢查實際環境；可授權只執行 `printf 'EXAMPLE_LOCAL_EXEC_OK\n'` 確認本機執行，這不是 Hermes 派工。
 
-B 的本機 A2A client 需另外取得與驗證，使用 loopback URL／新具名 caller credential。B 只做本機派工不需 Serve；不要為方便移除 token／trust。若重用已驗證 bridge 原始碼，必須重新核對本機路徑、registry URL 與身份，不能宣稱本套件已附它。
+B可用本套件自製bridge，按Mac mini流程隔離安裝、再驗收真實路徑，使用loopback與新具名caller credential。B 只做本機派工不需 Serve；不要為方便移除 token／trust。若重用已驗證 bridge 原始碼，必須重新核對本機路徑、registry URL 與身份，不能宣稱本套件已附它。
 
 ## 7. 四層驗收與交接
 

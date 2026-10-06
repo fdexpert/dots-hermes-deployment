@@ -41,3 +41,12 @@ local_readonly.py ffde80a9f72c4d12e2216392c23b14c832faf6db3a369bff52719f924afb32
 - [Python macOS](https://www.python.org/downloads/macos/)。
 
 官方網站會更新；部署時按相容版本與實際--help核對，不用本文件掩蓋版本差異。bridge未取得的欄位與schema明列待來源，不能用通用MCP/A2A文件推定原bridge實作。
+
+## 0.4.0新增bridge的核對
+
+同一非秘密checkout revision；A2A tracked diff仍為空。adapter._rpc_message_send同步等待，沒有按returnImmediately提前回ID；_rpc_tasks_get用id/taskId查TaskStore，_rpc_tasks_list按contextId查詢。TaskStore為process記憶體，查詢不代表持久佇列。未讀取原案例bridge，未拷貝第三方程式，新bridge為本專案原創實作。
+
+- [A2A官方specification](https://a2a-protocol.org/latest/specification/)：JSONRPC SendMessage／GetTask／ListTasks、v1 message/task形狀；實際能力以所核對Hermes版本為準。
+- [MCP stdio](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)、[lifecycle](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle)、[tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)：newline transport、初始化與工具schema；沒有複製SDK。
+
+本文件首段記錄初始非秘密程式核對範圍。後續本機驗收在明確批准後只投影相關非秘密設定；使用者親自配置獨立credential，新bridge按已設定私人token檔正常認證。秘密值、真config／registry、完整備份／日誌不納入kit；結果見[本輪驗收](ACCEPTANCE_2026-10-06.md)。

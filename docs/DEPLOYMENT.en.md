@@ -66,19 +66,19 @@ This changes Serve and is not executed automatically by the kit. It should repor
 
 Run health/card on the caller Mac using the new host's actual DNS. Verify TLS, agent name, and card URL first. [Acceptance](VALIDATION.en.md)
 
-## 6A. Obtain, check, and install the original bridge
+## 6A. Install the new kit bridge or obtain the original case bridge
 
-The owner must authorize sharing the intermediary's non-secret bridge source/dependencies/redacted schema. Source has not been obtained, so **new-machine A end-to-end bridge deployment cannot yet be completed**. Server/HTTP preparation does not establish a complete bridge port.
+New deployments may use this project's original bridge. Follow the [Mac mini installation guide](MAC_MINI_BRIDGE.en.md): plan, explicit apply to a fresh private prefix, and manual pinned URL/expected_name configuration. Start with health/card, without automatic dispatch. MCP transport is stdio; configure the chosen client using its actual format, without global automatic registration.
 
-After acquisition, check caller_id, URL override, raw-token loading, the `fleet_ask` input schema from MCP `tools/list`, and timeout behavior. Create a separate environment from official/original lockfiles; do not guess dependency versions. The user creates a real registry outside the kit and updates target alias/URL/raw peer token.
+The user personally prepares a new raw caller token outside kit/prefix. Use explicit send/query only after server named trust, reserved-identity checks, compatible-contract review, and separate authorization. The new implementation passed mocks/isolated installation but has no real Hermes acceptance and is not a port of the original bridge.
 
-Configure **stdio** command/args (Python and `.py` paths) according to the acquired bridge's actual MCP client instructions. Do not register the A2A HTTPS URL as an HTTP MCP server. Use `tools/list` to inspect schema without automatic task dispatch. Connecting a computer in Dots does not automatically give every task this tool. Check the new task's client/bridge capability before authorized acceptance. [Contract](BRIDGE_CONTRACT.en.md)
+Original case fleet_ask use still requires owner-authorized non-secret source/lockfile/registry loader/tools-list schema. Stop that original-file path until obtained. Do not retrieve from unauthorized hosts or guess parameters. [Contracts and differences](BRIDGE_CONTRACT.en.md)
 
 ## 5B. Connect Dots directly to the Hermes Mac
 
 In that machine's ChatGPT app, use dot profile → Computers → Your computer → Allow access. The user reviews and confirms access. Keep the machine awake/online with the app open. Create a separate local task and check its actual environment. A separately authorized `printf 'EXAMPLE_LOCAL_EXEC_OK\n'` can establish local execution; this is not Hermes task dispatch.
 
-B needs a separately obtained and verified local A2A client, using loopback and a new named caller credential. Local-only B does not need Serve. Do not remove token/trust for convenience. If reusing verified bridge source, recheck local paths, registry URL, and identities; this kit does not include that source.
+B can use the new kit bridge: isolated installation per the Mac mini guide, then real-path acceptance with loopback/new named caller credential. Local-only B does not need Serve. Do not remove token/trust for convenience. If reusing verified bridge source, recheck local paths, registry URL, and identities; this kit does not include that source.
 
 ## 7. Acceptance and handoff
 

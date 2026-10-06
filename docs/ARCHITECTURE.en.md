@@ -26,7 +26,7 @@ Dots → authorized executor on example-target Mac
               → HTTP 127.0.0.1:9900 → Hermes gateway
 ```
 
-B does not need the intermediary Mac. A local-only A2A path does not need Serve; configure tailnet Serve separately if remote callers are also required. Successful shell execution does not prove a task was sent to the Hermes agent. This kit's `diagnose.py` is not a local task client and does not provide `fleet_ask`.
+B does not need the intermediary Mac. A local-only A2A path does not need Serve; configure tailnet Serve separately if remote callers are also required. Successful shell execution does not prove a task was sent to the Hermes agent. Diagnostics do not dispatch. The new [kit bridge](MAC_MINI_BRIDGE.en.md) offers explicit fleet_send and GetTask/ListTasks queries, not the original fleet_ask.
 
 ## C: evaluated, unsuccessful
 

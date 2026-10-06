@@ -41,3 +41,12 @@ local_readonly.py ffde80a9f72c4d12e2216392c23b14c832faf6db3a369bff52719f924afb32
 - [Python macOS](https://www.python.org/downloads/macos/).
 
 Official sites change. Check compatible versions and actual --help during deployment rather than hiding version differences. Bridge fields/schema remain pending source; generic MCP/A2A documents do not establish the original bridge implementation.
+
+## Checks for the new 0.4.0 bridge
+
+Same non-secret checkout revision; tracked A2A diff still empty. adapter._rpc_message_send waits synchronously without honoring early returnImmediately. _rpc_tasks_get queries TaskStore by id/taskId; _rpc_tasks_list filters by contextId. The process-memory store is not a durable queue. No original case bridge was read or third-party implementation copied; new code is original project work.
+
+- [Official A2A specification](https://a2a-protocol.org/latest/specification/): JSONRPC SendMessage/GetTask/ListTasks and v1 message/task shapes; actual capabilities follow the inspected Hermes version.
+- [MCP stdio](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports), [lifecycle](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle), [tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools): newline transport, initialization, and tool schemas, without copying an SDK.
+
+The opening paragraph records initial non-secret source inspection. Later local acceptance projected related non-secret configuration under explicit approval; the user personally configured distinct credentials and the new bridge authenticated through its configured private token file. Secret values/real config/registry/full backups/logs are excluded. See [acceptance](ACCEPTANCE_2026-10-06.en.md).

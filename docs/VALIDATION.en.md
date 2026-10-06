@@ -9,6 +9,10 @@
 | 3: HTTP + authentication | Reachable DNS/TLS/card; effective general RPC authentication/trust | Matching health/card names; reachable or explicitly overridden card URL; unauthenticated safe probe rejected; valid named-token probe returns expected method-not-found; reserved identity denied general RPC | GET 200 may be publicly available and does not prove identity, trust, or task dispatch |
 | 4: actual task | Authorized end-to-end path | After separate user approval, send the exact message below once to one target; obtain HERMES_OK/completed/no tool calls and record duration/status | Long tasks, all tools, or all operating systems |
 
+## New bridge acceptance boundary
+
+The 51 tests include CLI/MCP subprocesses against self-owned mocks, actual isolated venv installation, idempotence, config preservation, rollback, and uninstall. This is not layer-4 real-agent acceptance. [This acceptance run](ACCEPTANCE_2026-10-06.en.md) passed real Hermes CLI/standard stdio MCP health/card; one authenticated B task also passed that evening; native Dots MCP/fresh accounts/other hardware remain untested. Retrieval is limited to GetTask/context ListTasks, without durable queue or automatic resend. [Operation guide](MAC_MINI_BRIDGE.en.md)
+
 ## Layer 3 commands
 
 Run against target loopback and, for A, the caller's tailnet URL:
@@ -38,8 +42,8 @@ A suitably authorized operator checks the reserved identity separately. It is no
 
 Meaning: “Reply only HERMES_OK; do not use tools, modify files, or contact anyone externally.” The Traditional Chinese text above remains the exact acceptance input in both editions; do not substitute the English explanation.
 
-Use a `fleet_ask` / local client with verified schema and separate operator authorization. Default scripts do not offer this function. Preparing this documentation did not dispatch a verification task.
+Use explicit new-kit send (message-file/confirm-send) or the acquired original fleet_ask with verified schema and separate operator authorization. Default installation/MCP does not enable dispatch. This edition separately completed one authorized real Hermes B task; see [acceptance matrix](ACCEPTANCE_2026-10-06.en.md). Do not replay completed acceptance automatically.
 
 Keep a redacted record: date, A/B, versions, self-chosen anonymous caller/target labels, HTTP status, completed state, exact reply, seconds, and tool-call count. Do not include tokens, full registry, task input history, or logs. If a 300-second timeout/disconnection leaves the result unknown, retain the local task reference and check server/client state manually first. Do not resend. Without a complete retrieval tool, mark the result pending.
 
-B still needs local Hermes task acceptance and independence with the intermediary not participating. The latter requires explicit approval and assessment of effects on other users. Do not shut down the original service for this document.
+One B local CLI task passed; the intermediary was not used, but an actual intermediary-shutdown experiment remains untested and needs explicit approval/impact assessment. Do not shut down original services for this document. Every new host still needs its own four-layer acceptance.

@@ -1,0 +1,226 @@
+{
+  "kit_version": "0.4.0",
+  "source_sha256": {
+    "scripts/bridge.py": "82948c4aec8b46fcfbc9dbb21d40d8bf5224b931b5322e4d8831b0cfffc1b02b",
+    "scripts/install.py": "a48bb758e0f9225e311ce9e9d4590766eb119aaad512293106e6ee2fd7afe03a"
+  },
+  "base_git_commit": "b2f4011589d40818f2eb01a75d78bd2a04dfdfa0",
+  "initial_readonly_acceptance": {
+    "kit_version": "0.4.0",
+    "started_utc": "2026-10-06T09:44:03.419067+00:00",
+    "environment": {
+      "os": "Darwin",
+      "arch": "arm64",
+      "python": "3.14.5",
+      "macos_version": "26.6.2"
+    },
+    "real_send_attempts": 0,
+    "real_authenticated_rpc_attempts": 0,
+    "credential_values_read_or_copied": false,
+    "native_mcp_registered": false,
+    "checks": {
+      "installation_plan": {
+        "status": "PASS",
+        "prefix_created": false
+      },
+      "clean_prefix_install": {
+        "status": "PASS",
+        "elapsed_seconds": 0.058,
+        "isolated_venv": true,
+        "dependencies": "stdlib_only_no_pip",
+        "installed_source_matches": true
+      },
+      "installation_repeat": {
+        "status": "PASS",
+        "changed": false,
+        "config_preserved": true
+      },
+      "real_cli_health": {
+        "status": "PASS",
+        "http_status": 200,
+        "expected_name_match": true,
+        "elapsed_seconds": 0.056,
+        "authentication_proven": false
+      },
+      "real_cli_card": {
+        "status": "PASS",
+        "http_status": 200,
+        "expected_name_match": true,
+        "hermes_v1_interface": true,
+        "bearer_advertised": true,
+        "loopback_url_advertised": true,
+        "elapsed_seconds": 0.058,
+        "authentication_proven": false
+      },
+      "task_stdio_mcp_real_readonly": {
+        "status": "PASS",
+        "server_version": "0.4.0",
+        "protocol_version": "2025-11-25",
+        "tools": [
+          "fleet_health",
+          "fleet_card"
+        ],
+        "initialize_list_call": true,
+        "http_statuses": [
+          200,
+          200
+        ],
+        "elapsed_seconds": 0.062,
+        "native_dots_registration": false
+      },
+      "uninstall": {
+        "status": "PASS",
+        "config_preserved": true,
+        "managed_files_removed": true
+      },
+      "scope": {
+        "status": "PASS",
+        "same_host_clean_prefix": true,
+        "new_hardware": false,
+        "new_account": false
+      },
+      "owned_temp_cleanup": {
+        "status": "PASS",
+        "temp_directory_removed": true,
+        "subprocesses_completed": true
+      }
+    },
+    "source_sha256": {
+      "scripts/bridge.py": "82948c4aec8b46fcfbc9dbb21d40d8bf5224b931b5322e4d8831b0cfffc1b02b",
+      "scripts/install.py": "a48bb758e0f9225e311ce9e9d4590766eb119aaad512293106e6ee2fd7afe03a"
+    },
+    "base_git_commit": "b2f4011589d40818f2eb01a75d78bd2a04dfdfa0",
+    "finished_utc": "2026-10-06T09:44:03.900454+00:00",
+    "evidence_kind": "actual_same_host_clean_prefix_and_real_readonly_checks",
+    "base_git_commit_is_0_3_0": true,
+    "working_tree_committed_or_pushed": false,
+    "target": {
+      "scope": "authorized_local_hermes",
+      "base_url": "http://127.0.0.1:9900",
+      "private_identity_omitted": true
+    },
+    "offline_tests": {
+      "status": "PASS",
+      "count": 51,
+      "elapsed_seconds": 1.46,
+      "synthetic_credentials_and_owned_mocks_only": true,
+      "real_agent_dispatch_proven": false
+    },
+    "acceptance_matrix": {
+      "clean_prefix_deployment_same_host": {
+        "status": "PASS",
+        "new_hardware_or_account_proven": false
+      },
+      "real_hermes_readonly_cli_and_standard_stdio": {
+        "status": "PASS",
+        "authentication_proven": false
+      },
+      "real_hermes_authentication_and_dispatch": {
+        "status": "BLOCKED",
+        "reason": "No directly usable non-read-only named caller raw-token file was confirmed; no secret extraction or identity relaxation allowed."
+      },
+      "native_dots_mcp_registration": {
+        "status": "BLOCKED",
+        "reason": "No native bridge registration or tool entry was exposed in the authorized environment; no persistent registration was changed."
+      },
+      "new_hardware_and_account": {
+        "status": "NOTTESTED"
+      },
+      "remote_a_intermediary_independence_long_tasks_real_tools": {
+        "status": "NOTTESTED"
+      }
+    },
+    "real_task_record": {
+      "status": "BLOCKED",
+      "authorized_message": "請只回覆 HERMES_OK，不使用工具、不修改檔案、不對外聯絡",
+      "send_attempts": 0,
+      "http_status": null,
+      "task_id": null,
+      "context_id": null,
+      "completed": null,
+      "reply": null,
+      "elapsed_seconds": null,
+      "remote_tool_calls": null,
+      "unknown_outcome": false,
+      "resend_attempts": 0
+    },
+    "unchanged_existing_environment": [
+      "Hermes service",
+      "trust",
+      "credentials",
+      "Tailscale Serve routes",
+      "global MCP registration"
+    ]
+  },
+  "direct_local_acceptance": {
+    "scope": "same_authorized_mac_dedicated_named_caller_cli_bridge_to_loopback_hermes",
+    "inbound_utc": "2026-10-06T22:18:09.628212+00:00",
+    "completed_utc": "2026-10-06T22:18:17.311465+00:00",
+    "status": "PASS",
+    "base_url": "http://127.0.0.1:9900",
+    "authenticated_named_caller_verified": true,
+    "caller_evidence": "task-matched inbound/outbound audit peer and matching a2a session user_id",
+    "http_status": 200,
+    "task_state": "TASK_STATE_COMPLETED",
+    "reply": "HERMES_OK",
+    "elapsed_seconds": 7.69,
+    "remote_tool_call_count": 0,
+    "tool_role_messages": 0,
+    "persisted_tool_call_entries": 0,
+    "tool_evidence": "matching-session metadata and readonly messages aggregates; no message content or tool arguments copied",
+    "real_send_attempts": 1,
+    "authenticated_rpc_attempts": 1,
+    "automatic_retry": false,
+    "unknown_outcome": false,
+    "case_identifiers_retained_in_private_local_record": true,
+    "public_case_identifiers_omitted": true,
+    "user_personally_configured_credentials": true,
+    "only_approved_named_trust_added": true,
+    "other_yaml_values_preserved": true,
+    "gateway_idle_before_restart": true,
+    "restart_verified_by_new_runtime_pid_listener_and_health": true,
+    "loopback_preserved": true,
+    "serve_funnel_changed": false,
+    "existing_intermediary_and_reserved_readonly_settings_preserved": true,
+    "intermediary_contacted": false,
+    "intermediary_poweroff_experiment": false
+  },
+  "current_matrix": {
+    "same_host_clean_prefix_installation": "PASS",
+    "real_cli_health_card": "PASS",
+    "standard_stdio_real_readonly_client": "PASS",
+    "real_direct_local_authentication_and_one_dispatch": "PASS",
+    "new_hardware_or_account_deployment": "NOTTESTED",
+    "native_dots_mcp_registration_and_dispatch": "NOTTESTED",
+    "new_bridge_remote_a_and_cloud_c": "NOTTESTED",
+    "intermediary_poweroff_long_tasks_restart_recovery": "NOTTESTED"
+  },
+  "offline_suite": {
+    "status": "PASS",
+    "count": 51,
+    "last_run_utc_window": "2026-10-06T22:39:41Z/2026-10-06T22:39:43Z",
+    "elapsed_seconds": 1.557,
+    "source_unchanged_since_run": true,
+    "mock_suite_is_not_real_dispatch_evidence": true
+  },
+  "acceptance_preceded_publication": true,
+  "publication": {
+    "repository": "https://github.com/fdexpert/dots-hermes-deployment",
+    "branch": "main",
+    "kit_version": "0.4.0",
+    "note": "Exact remote revision and CI are verified in the publication delivery; no real task is repeated."
+  },
+  "publication_checks": {
+    "test_started_utc": "2026-10-06T22:39:41.258877+00:00",
+    "test_finished_utc": "2026-10-06T22:39:42.927923+00:00",
+    "offline_tests": 51,
+    "unittest_elapsed_seconds": 1.557,
+    "status": "PASS",
+    "owned_mocks_and_temporary_prefixes_only": true,
+    "preexisting_history_commits_scanned": 2,
+    "preexisting_history_blobs_scanned": 89,
+    "allowlist_files_scanned": 69,
+    "private_case_markers_absent": true,
+    "new_real_send_attempts": 0
+  }
+}

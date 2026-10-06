@@ -2,6 +2,16 @@
 
 **繁體中文** | [English](CHANGELOG.en.md)
 
+## 0.4.0 — 2026-10-06（自製bridge與隔離安裝）
+
+- 新增獨立stdlib CLI／stdio MCP bridge、明確JSON schema；預設health/card，SendMessage要確認，GetTask／context ListTasks只讀查詢。
+- RPC前核對身份／版本／bearer公告；pinned loopback/tailnetHTTPS、TLS驗證、無redirect／proxy繼承／自動重試；已知token回顯拒絕。
+- 使用者私密token檔／隱藏CLI輸入；非秘密receipt保存request/message/context/task ID與狀態，不保存訊息／回覆／token。
+- 安裝器預設dry-run、明確apply/uninstall；只管理新私人prefix、無pip的venv，保留config，拒絕未知／改動／不完整prefix。
+- 新增24項mock／子程序／隔離安裝測試；總51項通過。更新24組雙語文件與69檔allowlist。
+- 補本輪雙語驗收矩陣／結構化證據：乾淨prefix與真Hermes CLI／標準stdio MCP health/card通過；晚間B真認證派工PASS，原生DotsMCP與新硬體／帳號NOTTESTED。
+- 本版bridge／隔離安裝器與雙語驗收文件更新至既有公開GitHub main；公開內容不含秘密或私人case IDs。初次僅唯讀；後續使用者親自配置獨立peer，另批准僅新增caller trust、必要gateway重啟與一次HERMES_OK，7.69秒、0工具。
+
 ## 0.3.0 — 2026-10-06（雙語版）
 
 - 為每份繁體中文文件加入完整英文對照與雙向語言切換。

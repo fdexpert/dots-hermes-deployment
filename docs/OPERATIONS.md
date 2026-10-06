@@ -2,7 +2,11 @@
 
 **繁體中文** | [English](OPERATIONS.en.md)
 
-kit是可分享的無秘密專案，**不是可還原現有機器的完整備份**。server秘密、client registry、模型授權、tailnet登入與 app 配對由使用者另存受控加密位置；本次未讀取或建立此類備份。
+kit是可分享的無秘密專案，**不是可還原現有機器的完整備份**。server秘密、client registry、模型授權、tailnet登入與 app 配對由使用者另存受控加密位置；完整秘密備份不納入kit；後續批准的trust診斷只投影相關非秘密欄位，沒有建立秘密備份。
+
+## kit安裝器回復
+
+自製bridge安裝器只管理新prefix的app／venv／owner marker，config永遠保留；改動／未知managed項目拒絕卸載。部分安裝失敗保留私人prefix供人工檢查，不能因此清除未知資料或改真服務。state與token建議放prefix外，按[Mac mini流程](MAC_MINI_BRIDGE.md)處理。
 
 ## 部署前
 

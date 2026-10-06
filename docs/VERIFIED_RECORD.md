@@ -16,15 +16,22 @@
 | 2026-10-06（本套件） | 非秘密checkout原始碼核對、Python/Tailscale盤點、新增套件離線驗證 | 未連線派工／修改服務；詳見SOURCES與DELIVERY_VALIDATION。 |
 | 2026-10-06（0.2.0發布） | 去識別kit另經授權發布至公開GitHub；已核對遠端visibility、main commit與38檔tree | 只發布套件來源，未部署／配置憑證或新增Hermes驗收。 |
 | 2026-10-06（0.3.0雙語版） | 每份文件加入完整英文對照、雙語導覽／範本註解與離線／包裝檢查 | 文件更新，技術命令與runtime行為不變；見[交付驗證](../DELIVERY_VALIDATION.md)。 |
+| 2026-10-06（0.4.0實作） | 自製CLI/MCP對自製mock、真venv暫存prefix安裝／冪等／config保留／rollback/uninstall，51tests通過 | 新bridge未對真Hermes派工，未整合真Dots MCP client；其他新硬體／帳號待驗收，當時未commit/push。 |
+| 2026-10-06 09:44（0.4.0驗收） | 同主機乾淨prefix plan/apply／重跑／卸載通過；新bridge CLI與標準stdio MCP對真Hermes health/card均HTTP200、身份吻合；51tests再次通過 | 真認證／單次派工因未確認相容憑證BLOCKED；原生Dots MCP註冊BLOCKED。未送真訊息、未改既有服務，非新硬體／帳號；見[驗收矩陣](ACCEPTANCE_2026-10-06.md)。 |
+
+| 2026-10-06 22:18（0.4.0 B真派工） | 使用者親自交接獨立具名credential；僅新增caller trust、idle工作0後重啟，CLI→loopback Hermes一次SendMessage回HERMES_OK，HTTP200／TASK_STATE_COMPLETED、7.69秒；audit與session核對caller，保存工具呼叫0 | 不經中介Mac；新硬體／帳號、原生DotsMCP、關中介機與長任務未測。私有case IDs留本機，公開ZIP去識別，驗收時尚未commit/push；見[矩陣](ACCEPTANCE_2026-10-06.md)。 |
+
+| 2026-10-06（0.4.0公開更新） | 新bridge／隔離安裝器、24組雙語文件與已完成B驗收去識別證據更新至既有公開main；69檔allowlist，發布前離線／語法／雙語／秘密掃描 | 只更新本套件來源，無新派工／server變更；新硬體／帳號與原生DotsMCP仍未測。exact commit及CI由交付紀錄核對。 |
 
 ## 尚未驗證
 
 - 完整中介 Mac bridge的來源、依賴、registry loader、MCP input schema與移植後端到端結果。
-- B本機Hermes派工與中介 Mac不參與時的獨立驗收。
+- B實際關閉中介Mac的實驗；單次本機CLI派工已通過且未使用中介機。
+- 原生DotsMCP註冊／派工，以及每台新硬體／帳號；本機CLI單次真認證派工已通過，不能代替其他部署。
 - 雲端C的持久runtime/socket/egress可行性；曾評估但未成功。
 - Linux／Windows／Intel Mac／其他OS或架構的整套部署。
 - 長任務、所有工具、複合profile、多caller、服務重啟後task恢復與完整pytest suite。
 - fleet_ask逾時後可靠查回／去重；server GetTask存在不等於bridge已提供此流程。
 - Dots app的固定最低build。本套件不承諾只登入dot就無人值守部署。
 
-既有紀錄與目前原始碼觀察分開；本次未重演原修復／派工，不改寫既有成功證據為新驗收。[原始碼來源](SOURCES.md)
+既有紀錄與目前原始碼觀察分開；本次沒有重演原A修復／派工；新增B證據獨立列日期，不用舊成功代替新驗收。[原始碼來源](SOURCES.md)

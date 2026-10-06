@@ -2,6 +2,8 @@
 
 **繁體中文** | [English](CONFIGURATION.en.md)
 
+新kit bridge使用[bridge-config JSON](../examples/bridge-config.example.json)，與下列原案例registry分開；見[Mac mini schema](MAC_MINI_BRIDGE.md)。安裝器不改server，以下server設定仍由操作者逐項合併。
+
 ## 分開配置
 
 | 範本 | 性質 | 放置／更新方式 |

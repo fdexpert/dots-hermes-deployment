@@ -2,7 +2,13 @@
 
 [繁體中文](BRIDGE_CONTRACT.md) | **English**
 
-## Known contract (case record, not a complete schema)
+## New kit bridge (0.4.0 implementation)
+
+Original project scripts/bridge.py uses explicit JSON config, not the old agents.yaml. Input schemas are exposed by tools/list and the [Mac mini guide](MAC_MINI_BRIDGE.en.md): default fleet_health/card, separately enabled fleet_send (confirm_send:true), fleet_get_task, and fleet_find_context.
+
+The same non-secret checkout confirms synchronous SendMessage result.task, ROLE_USER/text parts/contextId/messageId; GetTask params.id; ListTasks contextId/pageSize/includeArtifacts. Config URL is pinned; no card-driven host changes; bearer goes only to that URL. Source/dependencies are included (stdlib); mocks/isolated prefixes and one real Hermes loopback B task passed. Native Dots MCP/new hardware/new-bridge remote A remain pending.
+
+## Original case contract (historical, not a complete schema)
 
 | Interface | Confirmed | Missing / must be checked |
 | --- | --- | --- |
@@ -13,7 +19,7 @@
 | Task result | HTTP 200, TASK_STATE_COMPLETED, reply text, elapsed time, remote tool calls | Schema/error mapping/complete task lookup workflow |
 | Timeout | Case synchronous wait about 300 seconds; no complete retrieval of unknown outcomes | Server GetTask does not establish that the bridge exposes result retrieval |
 
-The kit does not invent a `fleet_ask(...)` command or include a substitute MCP server. Diagnostics only provide health/card and a constrained auth probe; they cannot dispatch tasks. The client registry filename explicitly says schema pending and must not be treated as verified loader input.
+The kit does not invent the original fleet_ask schema or present its new MCP server as the original file. Diagnostics cannot dispatch; the new bridge sends only with explicit confirmation. The client registry filename explicitly says schema pending and must not be treated as verified loader input.
 
 ## Admission checks after source is obtained
 
@@ -24,4 +30,4 @@ The kit does not invent a `fleet_ask(...)` command or include a substitute MCP s
 5. Reject missing tokens/peer fields, reserved identities, and callers outside trust. Do not automatically resend unknown tasks after timeout/restart.
 6. Pass fixture/unit tests and syntax checks first. Separately authorize one HERMES_OK task before marking a complete A bridge port as validated.
 
-The intermediary Mac is not currently authorized for source retrieval. Do not SSH to it to obtain source. Without source, retain this gap and complete only the server, computer connection, and diagnostic work that is available.
+The intermediary Mac is not currently authorized for source retrieval. Do not SSH to it to obtain source. If selecting the original file without source, retain that gap. The new kit bridge can be installed/accepted under its independent schema; do not claim an original-file port.

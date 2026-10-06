@@ -19,4 +19,8 @@
 
 The inspected checkout's local_bridge_only returns 403 for GET, but POST may reject authentication first with 401. The earlier case observed 403 throughout. This reflects version/repair-state differences; check semantics and actual source rather than inferring settings from one status. [Sources and dates](SOURCES.en.md)
 
+New bridge: credential_required/unsafe_token_file → user checks raw-token file/owner/600 permissions locally; contract_confirmation_required → inspect server before adding contract; outcome_unknown → no resend, explicit get-task/find-context. Unknown/modified/incomplete prefixes → inspect manually or choose a new prefix, without force. [Mac mini guide](MAC_MINI_BRIDGE.en.md)
+
 Do not attach full logs. Check the error category and necessary line numbers locally, then provide a short redacted excerpt. Diagnostics output fixed fields without arbitrary response or exception contents.
+
+`A2A_TRUSTED_PEERS=""` falls back to YAML; keep a non-empty named YAML list and allow-all false. An unmatched sentinel is a non-empty override that blocks legitimate existing/new callers; do not blindly restore an old backup. If gateway restart returns zero before readiness, verify new runtime PID/listener/HTTP and wait for normal startup rather than blindly restarting again or dispatching early.

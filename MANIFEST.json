@@ -1,5 +1,5 @@
 {
-  "kit_version": "0.3.0",
+  "kit_version": "0.4.0",
   "files": [
     ".gitignore",
     "AGENTS.en.md",
@@ -19,6 +19,9 @@
     "PUBLICATION_AUDIT.md",
     "README.en.md",
     "README.md",
+    "docs/ACCEPTANCE_2026-10-06.en.md",
+    "docs/ACCEPTANCE_2026-10-06.json",
+    "docs/ACCEPTANCE_2026-10-06.md",
     "docs/ARCHITECTURE.en.md",
     "docs/ARCHITECTURE.md",
     "docs/BRIDGE_CONTRACT.en.md",
@@ -29,6 +32,8 @@
     "docs/DEPLOYMENT.md",
     "docs/GITHUB.en.md",
     "docs/GITHUB.md",
+    "docs/MAC_MINI_BRIDGE.en.md",
+    "docs/MAC_MINI_BRIDGE.md",
     "docs/OPERATIONS.en.md",
     "docs/OPERATIONS.md",
     "docs/PARAMETERS.en.md",
@@ -45,6 +50,7 @@
     "docs/VALIDATION.md",
     "docs/VERIFIED_RECORD.en.md",
     "docs/VERIFIED_RECORD.md",
+    "examples/bridge-config.example.json",
     "examples/client-agents.schema-pending.example.yaml",
     "examples/deployment-plan.example.json",
     "examples/peer-token-format.example.txt",
@@ -54,11 +60,14 @@
     "examples/topology.txt",
     "scripts/README.en.md",
     "scripts/README.md",
+    "scripts/bridge.py",
     "scripts/diagnose.py",
+    "scripts/install.py",
     "scripts/plan.py",
     "scripts/validate_kit.py",
     "tests/fixtures/card.example.json",
     "tests/fixtures/health.example.json",
+    "tests/test_bridge_and_install.py",
     "tests/test_diagnostics.py",
     "tests/test_plan_and_package.py"
   ]

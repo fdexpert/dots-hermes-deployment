@@ -26,7 +26,7 @@ Dots → example-target Mac 的已授權執行器
               → HTTP 127.0.0.1:9900 → Hermes gateway
 ```
 
-B 不需要 中介 Mac。只使用本機 A2A 時也不需要 Serve；若另有遠端 caller 才另外配置 tailnet Serve。直接執行 shell 成功不表示已向 Hermes agent 派工。本套件 `diagnose.py` 不是本機派工 client，也不提供 `fleet_ask`。
+B 不需要 中介 Mac。只使用本機 A2A 時也不需要 Serve；若另有遠端 caller 才另外配置 tailnet Serve。直接執行 shell 成功不表示已向 Hermes agent 派工。本套件diagnose只做診斷；新的[kit bridge](MAC_MINI_BRIDGE.md)提供明確fleet_send與GetTask/ListTasks查詢，不提供原案例fleet_ask。
 
 ## C：曾評估、未成功
 

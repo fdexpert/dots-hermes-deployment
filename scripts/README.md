@@ -2,7 +2,11 @@
 
 **繁體中文** | [English](README.en.md)
 
-只使用Python stdlib、3.11以上；不安裝dependency、不讀有效server/client config、不執行Hermes CLI。network工具只接受明確URL，不自動掃描tailnet，不發SendMessage或任何派工。
+只使用Python stdlib、3.11以上；不安裝dependency、不讀有效server/client config、不執行Hermes CLI。diagnose只接受明確URL，不掃tailnet、不派工；新bridge的SendMessage必須明確確認。
+
+## bridge.py／install.py
+
+見[Mac mini完整流程](../docs/MAC_MINI_BRIDGE.md)：自製stdlib stdio MCP／CLI、具明確確認的派工與GetTask/ListTasks查詢；安裝器預設plan、明確apply至新私人prefix，不設服務／安全／全域MCP。
 
 ## diagnose.py
 
@@ -41,4 +45,4 @@ python3 -B scripts/validate_kit.py --zip /absolute/path/dots-hermes-deployment-k
 python3 -B -m unittest discover -s tests -v
 ```
 
-fixtures均是新建合成資料；tests用fake transport／in-memory response，不開socket、不接真服務、不發派工。涵蓋URL拒絕、TLS/redirect政策、回應大小／語法、無body或token輸出、健康名稱、card loopback、auth拒絕順序、dry-run冪等／保留輸入／無寫入與失敗不變更、包裝／連結／秘密掃描。套件單元測試不是Hermes原完整pytest suite。
+fixtures均是新建合成資料；原27tests用fake transport／in-memory response；新增24tests用自製loopback mock與隔離venv、CLI/MCP子程序、合成token。測試不接真Hermes、不讀真憑證、不對真服務派工，清理自己socket／程序／暫存目錄。涵蓋URL拒絕、TLS/redirect政策、回應大小／語法、無body或token輸出、健康名稱、card loopback、auth拒絕順序、dry-run冪等／保留輸入／無寫入與失敗不變更、包裝／連結／秘密掃描。套件單元測試不是Hermes原完整pytest suite。

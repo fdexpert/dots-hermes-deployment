@@ -14,7 +14,7 @@
 - [ ] 具名caller與trust一致、allow-all false、無env trust覆寫、保留身份token獨立。
 - [ ] 9900只監聽loopback且只有一個正確gateway；沒有強制啟第二個dispatcher。
 - [ ] A：Serve tailnet-only HTTPS10000→loopback9900、ACL最小化、未啟Funnel、其他entry未動。
-- [ ] A：完整bridge／lockfile／loader／tools/list schema取得並核對；若未取得，此步未完成。
+- [ ] 選新kit bridge或原案例bridge並記錄。新kit plan/apply／隔離測試／config／手動client設定完成；原檔選項仍須來源／lockfile／loader／schema。
 - [ ] B：Dots直接新task確實在target；target醒著、網路與app可用。
 - [ ] 設定層驗收通過。
 - [ ] 程序層驗收通過。

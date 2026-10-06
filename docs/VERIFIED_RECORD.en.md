@@ -16,15 +16,22 @@ All dates are UTC. The public edition retains only anonymized summaries. “Inte
 | 2026-10-06 (kit) | Non-secret checkout inspection, Python/Tailscale inventory, new offline kit validation | No task dispatch or service changes. See SOURCES and DELIVERY_VALIDATION. |
 | 2026-10-06 (0.2.0 publication) | Separately authorized sanitized kit published to a public GitHub repository; remote visibility, main commit, and 38-file tree checked | Publication of kit source only; no deployment, credential configuration, or new Hermes acceptance. |
 | 2026-10-06 (0.3.0 bilingual edition) | Complete English document counterparts, bilingual navigation/example comments, offline and package checks | Documentation update; technical commands and runtime behavior unchanged. See [delivery validation](../DELIVERY_VALIDATION.en.md). |
+| 2026-10-06 (0.4.0 implementation) | Original CLI/MCP against self-owned mocks, real venv temporary-prefix installation/idempotence/config preservation/rollback/uninstall; 51 tests passed | No real Hermes task or actual Dots MCP-client integration; other hardware/accounts pending; not committed/pushed at that time. |
+| 2026-10-06 09:44 (0.4.0 acceptance) | Same-host clean-prefix plan/apply/repeat/uninstall passed; new-bridge CLI and standard stdio MCP real Hermes health/card returned HTTP 200 with matching identity; all 51 tests passed again | Real authentication/single dispatch BLOCKED by unconfirmed compatible credentials; native Dots MCP registration BLOCKED. No real message or existing service changes; not new hardware/account. See [acceptance matrix](ACCEPTANCE_2026-10-06.en.md). |
+
+| 2026-10-06 22:18 (0.4.0 real B task) | User personally handed off distinct named credentials; only caller trust appended, idle work zero checked then gateway restarted. CLI→loopback Hermes one SendMessage returned HERMES_OK, HTTP 200/TASK_STATE_COMPLETED, 7.69 seconds; matched audit/session confirm caller and zero tool calls | Intermediary not used; new hardware/accounts/native Dots MCP/shutdown experiment/long tasks untested. Private case IDs stay local, public ZIP sanitized; no commit/push at acceptance time. See [matrix](ACCEPTANCE_2026-10-06.en.md). |
+
+| 2026-10-06 (0.4.0 public update) | New bridge/isolated installer, 24 document pairs and sanitized completed-B evidence update existing public main; 69-file allowlist with pre-publication offline/syntax/language/secret checks | Kit source only, no new tasks/server changes; new hardware/accounts/native Dots MCP remain untested. Exact commit/CI checked in delivery. |
 
 ## Still unverified
 
 - Full intermediary bridge source, dependencies, registry loader, MCP input schema, and end-to-end results after a new port.
-- B local Hermes task and independence with the intermediary not participating.
+- B actual intermediary-shutdown experiment; one local CLI task passed without using it.
+- Native Dots MCP registration/dispatch and every new hardware/account; one local authenticated CLI task passed without proving those deployments.
 - Persistent cloud C runtime/socket/egress feasibility; evaluated without success.
 - Complete deployment on Linux, Windows, Intel Mac, or other OS/architectures.
 - Long tasks, every tool, combined profiles, multiple callers, task recovery after service restart, and the full Hermes pytest suite.
 - Reliable fleet_ask result retrieval/deduplication after timeout; server GetTask does not establish that bridge workflow.
 - A fixed minimum Dots app build. The kit does not promise unattended deployment merely by logging into a dot.
 
-Historical records remain separate from current source observations. Documentation work did not repeat the original repair or task; prior success is not represented as fresh acceptance. [Source records](SOURCES.en.md)
+Historical records remain separate from current source observations. Original A repair/task was not repeated; new B evidence has its own date and does not reuse old success as fresh acceptance. [Source records](SOURCES.en.md)

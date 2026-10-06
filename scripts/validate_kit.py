@@ -16,8 +16,9 @@ SECRET_PATTERNS = (
     re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|tskey-[A-Za-z0-9_-]{20,})\b"),
     re.compile(r"https?://[^\s/@]+:[^\s/@]+@"),
 )
-BLOCKED_PARTS = {".git", ".venv", "__pycache__", "backups", "logs", "secrets", "local", "node_modules"}
-BLOCKED_NAMES = {".env", "agents.yaml", "registry.yaml", "registry.json", ".DS_Store"}
+BLOCKED_PARTS = {".git", ".venv", "venv", "__pycache__", "backups", "logs", "secrets", "local", "node_modules",
+                 "receipts", "private", "runtime-state"}
+BLOCKED_NAMES = {".env", "agents.yaml", "registry.yaml", "registry.json", ".DS_Store", "bridge-config.json", ".kit-install.json"}
 BLOCKED_SUFFIXES = {".log", ".jsonl", ".db", ".pem", ".key", ".pyc", ".zip", ".sqlite"}
 
 

@@ -14,7 +14,7 @@ Date: ______ Operator: ______ Anonymous new-host label: ______ Path: A / B Kit v
 - [ ] Named caller matches trust; allow-all false; no environment trust override; reserved identity has a distinct token.
 - [ ] Port 9900 loopback-only with one correct gateway; no forced second dispatcher.
 - [ ] A: tailnet-only Serve HTTPS 10000→loopback 9900, minimum ACL, no Funnel, other entries untouched.
-- [ ] A: full bridge/lockfile/loader/tools-list schema obtained and checked; incomplete if source is missing.
+- [ ] Choose new kit bridge or original case bridge; record choice. New kit plan/apply/isolated tests/config/manual client setup passed; original-file use still requires source/lockfile/loader/schema.
 - [ ] B: new direct Dots task runs on target; target awake, network and app available.
 - [ ] Configuration-layer acceptance passed.
 - [ ] Process-layer acceptance passed.

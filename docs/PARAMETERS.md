@@ -2,6 +2,8 @@
 
 **繁體中文** | [English](PARAMETERS.en.md)
 
+新bridge的參數另見[JSON schema與CLI](MAC_MINI_BRIDGE.md)，不猜原registry loader；下表的原bridge路徑只適用原案例選項。
+
 先填 [非秘密部署計畫](../examples/deployment-plan.example.json)。這是套件規劃格式，不是 Hermes／bridge 可直接載入的設定。
 
 | 參數／角色 | example 值 | 實際用途／核對 |

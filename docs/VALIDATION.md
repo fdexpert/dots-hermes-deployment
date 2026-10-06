@@ -9,6 +9,10 @@
 | 3 HTTP＋認證 | DNS/TLS/card 可達且 general RPC 認證／trust生效 | health/card 名稱吻合；card URL可達或已明確覆蓋；無認證安全 probe被拒絕；具名正確 token 的 probe回預期 method-not-found；保留身份general RPC拒絕 | GET 200 可公開取得，不足以證明身份、trust或派工 |
 | 4 實際派工 | 授權路徑端到端 | 使用者另外授權後，向單一目標只傳一次下列原文；回 HERMES_OK、completed、無 tool calls並記錄耗時／狀態 | 不能推論長任務、所有工具或所有 OS 均已通過 |
 
+## 新bridge驗收界線
+
+51tests含實際CLI/MCP子程序對自製mock、真venv隔離安裝／冪等／config保留／rollback與uninstall。不是此矩陣第四層的真機派工。[本輪驗收](ACCEPTANCE_2026-10-06.md) 已通過真Hermes的CLI／標準stdio MCP health/card；晚間單次B真認證派工亦通過；原生DotsMCP、新帳號／其他硬體仍未測。新版查詢以GetTask／context ListTasks為限，無可靠佇列或自動重送。[操作流程](MAC_MINI_BRIDGE.md)
+
 ## 第三層命令
 
 在 target loopback 與 A caller 的 tailnet URL分別執行：
@@ -38,8 +42,8 @@ python3 -B scripts/diagnose.py auth --base-url https://example-hermes.example-ta
 
 兩個語言版本均使用上方繁體中文作為唯一驗收輸入；英文版另附意思說明，不替換原文。
 
-透過經核對 schema的 `fleet_ask`／本機 client，由操作者另外授權。預設腳本不提供此功能。本次建立文檔沒有派工驗證。
+可透過新kit bridge的明確send（message-file／confirm-send），或取得並核對原schema的fleet_ask，由操作者另外授權。預設安裝／MCP不啟用派工。本版另經授權完成一次真Hermes B派工，證據見[本輪矩陣](ACCEPTANCE_2026-10-06.md)；不要自動重播已完成驗收。
 
 去秘密紀錄：日期、A/B、版本／caller與target 的自定匿名標籤、HTTP狀態、completed、原文結果、秒數、tool-call數。不要附 token、完整registry、任務輸入歷史或日誌。300秒逾時／連線中斷結果未知：保留本機task參照，先人工查 server／client狀態，不重送；未取得完整查回工具時標為待確認。
 
-B 仍需未完成兩項：本機 Hermes派工；在明確授權且評估其他使用者影響後，讓 中介 Mac 不參與再驗證獨立性。不要為這份文件關掉原服務。
+B本機CLI單次派工已通過；本輪沒使用中介Mac，但實際關閉中介Mac的實驗仍未做。該實驗需明確授權並評估其他使用者影響；不要為文件關掉原服務。每個新機仍須獨立四層驗收。

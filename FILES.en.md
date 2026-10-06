@@ -2,7 +2,7 @@
 
 [繁體中文](FILES.md) | **English**
 
-60 files, including 22 pairs of Traditional Chinese/English documents. The ZIP contains only these newly created non-secret files.
+69 files including 24 document pairs and 8 Python files. ZIP contains only the explicitly allowlisted non-secret kit files.
 
 ```text
 .gitignore
@@ -23,6 +23,9 @@ PUBLICATION_AUDIT.en.md
 PUBLICATION_AUDIT.md
 README.en.md
 README.md
+docs/ACCEPTANCE_2026-10-06.en.md
+docs/ACCEPTANCE_2026-10-06.json
+docs/ACCEPTANCE_2026-10-06.md
 docs/ARCHITECTURE.en.md
 docs/ARCHITECTURE.md
 docs/BRIDGE_CONTRACT.en.md
@@ -33,6 +36,8 @@ docs/DEPLOYMENT.en.md
 docs/DEPLOYMENT.md
 docs/GITHUB.en.md
 docs/GITHUB.md
+docs/MAC_MINI_BRIDGE.en.md
+docs/MAC_MINI_BRIDGE.md
 docs/OPERATIONS.en.md
 docs/OPERATIONS.md
 docs/PARAMETERS.en.md
@@ -49,6 +54,7 @@ docs/VALIDATION.en.md
 docs/VALIDATION.md
 docs/VERIFIED_RECORD.en.md
 docs/VERIFIED_RECORD.md
+examples/bridge-config.example.json
 examples/client-agents.schema-pending.example.yaml
 examples/deployment-plan.example.json
 examples/peer-token-format.example.txt
@@ -58,11 +64,14 @@ examples/server-trust.fragment.example.yaml
 examples/topology.txt
 scripts/README.en.md
 scripts/README.md
+scripts/bridge.py
 scripts/diagnose.py
+scripts/install.py
 scripts/plan.py
 scripts/validate_kit.py
 tests/fixtures/card.example.json
 tests/fixtures/health.example.json
+tests/test_bridge_and_install.py
 tests/test_diagnostics.py
 tests/test_plan_and_package.py
 ```

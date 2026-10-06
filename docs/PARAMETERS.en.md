@@ -2,6 +2,8 @@
 
 [繁體中文](PARAMETERS.md) | **English**
 
+See the [new bridge JSON schema/CLI](MAC_MINI_BRIDGE.en.md) rather than guessing old registry loaders. Original bridge paths below apply only when choosing that implementation.
+
 Start with the [secret-free deployment plan](../examples/deployment-plan.example.json). It is the kit's planning format, not configuration that Hermes or the bridge can load directly.
 
 | Parameter / role | Example value | Purpose / check |

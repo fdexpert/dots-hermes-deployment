@@ -2,7 +2,11 @@
 
 [繁體中文](README.md) | **English**
 
-Python stdlib only, 3.11+. Tools do not install dependencies, read effective server/client configuration, or execute the Hermes CLI. Network tools require explicit URLs; they do not scan the tailnet or send SendMessage/task requests. CLI output is English in both document editions.
+Python stdlib only, 3.11+. Tools do not install dependencies, read effective server/client configuration, or execute the Hermes CLI. Diagnostics require explicit URLs without scanning/dispatch. The new bridge requires explicit confirmation for SendMessage. CLI output is English in both document editions.
+
+## bridge.py / install.py
+
+See the [complete Mac mini guide](../docs/MAC_MINI_BRIDGE.en.md): original stdlib stdio MCP/CLI, explicitly confirmed dispatch and GetTask/ListTasks queries; installer defaults to plan, applies only to a fresh private prefix, and creates no services/security/global MCP.
 
 ## diagnose.py
 
@@ -41,4 +45,4 @@ Checks manifest completeness/explicit filenames, symlinks, forbidden paths, Pyth
 python3 -B -m unittest discover -s tests -v
 ```
 
-Fixtures are newly created synthetic data. Tests use fake transport/in-memory responses: no sockets, real services, or tasks. Coverage includes URL rejection, TLS/redirect policy, response size/syntax, no body/token output, health names, loopback cards, auth rejection order, dry-run idempotence/input preservation/no writes/unchanged state on failure, packaging, links, and secret scanning. These tests are not the complete Hermes pytest suite.
+Fixtures are newly created synthetic data. The original 27 tests use fake transport/in-memory responses. The 24 new tests use self-owned loopback mocks, isolated venvs, CLI/MCP subprocesses, and synthetic tokens. They never call real Hermes/read real credentials/dispatch to real services, and clean up their sockets/processes/temporary directories. Coverage includes URL rejection, TLS/redirect policy, response size/syntax, no body/token output, health names, loopback cards, auth rejection order, dry-run idempotence/input preservation/no writes/unchanged state on failure, packaging, links, and secret scanning. These tests are not the complete Hermes pytest suite.

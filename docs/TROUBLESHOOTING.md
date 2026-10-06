@@ -19,4 +19,8 @@
 
 目前checkout的local_bridge_only對GET回403，但POST可能先因認證回401；案例觀察曾全403。這是版本／修復狀態差異，應看語意與實際原始碼，不能只依單一status猜設定。[來源與日期](SOURCES.md)
 
+新bridge：credential_required／unsafe_token_file→使用者本機核對原始token檔與owner/600權限；contract_confirmation_required→先核對server再加契約欄位；outcome_unknown→不重送，明確get-task/find-context。安裝器unknown/modified/incomplete prefix拒絕→人工檢查或新prefix，不force。[詳見Mac mini流程](MAC_MINI_BRIDGE.md)
+
 不要附完整日誌作回報。先在本機確認錯誤類別與必要行號，再摘錄去秘密短句；診斷工具只輸出固定欄位，不印任意response或exception內容。
+
+`A2A_TRUSTED_PEERS=""`會回退至YAML；維持非空具名YAML名單與allow-all false。不存在的sentinel是非空環境覆寫，會阻擋原合法caller與新caller，不應盲目還原舊備份。gateway restart回0但runtime未ready時，核對新runtime PID、listener及HTTP；等待正常啟動，不盲目再重啟或先派工。

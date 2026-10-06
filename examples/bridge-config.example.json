@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "caller_id": "example-caller",
+  "targets": {
+    "example-target": {
+      "base_url": "http://127.0.0.1:9900",
+      "expected_name": "hermes-example-target",
+      "timeout_seconds": 330
+    }
+  }
+}

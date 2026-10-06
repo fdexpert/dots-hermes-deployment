@@ -14,10 +14,10 @@
 ## User-operated credential handoff
 
 1. Identify the new host/caller and controlled settings location. Prepare owner-readable secret storage outside the kit.
-2. The user creates and enters new tokens through a trusted password manager/private local interface. The kit does not generate, read, move, or rotate existing secrets.
+2. The user creates and enters new tokens through a trusted password manager/private local interface. Kit creation/installation does not generate, read, move, or rotate existing secrets. An explicitly invoked bridge RPC may read one user-prepared private token file or hidden CLI input; never .env/old registry.
 3. The server needs comma-separated `name:token` pairs in `A2A_PEER_TOKENS`, with distinct values for each identity. This is not JSON. Edit locally in a private editor and preserve existing valid entries.
 4. Store the paired **raw token** in client registry `agents.<target_alias>.token`; no `Bearer ` or `caller:` prefix. Keep the registry outside the kit with owner-only permissions such as 600.
-5. Do not report values. Report only “caller configured, trust checked, permissions confirmed.” Authentication diagnostics use a hidden local prompt and refuse if getpass cannot hide input.
+5. Do not report values. Report only “caller configured, trust checked, permissions confirmed.” Authentication diagnostics use a hidden local prompt and refuse if getpass cannot hide input. See the [Mac mini guide](MAC_MINI_BRIDGE.en.md) for new bridge token-file/reply/state boundaries.
 6. The user configures the Hermes model provider, Tailscale sign-in, and app account on the new host. Do not move an old `.env` or entire home into the shareable kit.
 
 See [incremental configuration](CONFIGURATION.en.md) for format details. Templates contain clear placeholders and are not usable credentials. `.gitignore` helps prevent accidental inclusion; it does not store secrets safely. ZIP packaging separately uses an explicit allowlist and content scans.
