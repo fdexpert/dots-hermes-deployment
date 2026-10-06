@@ -1,6 +1,8 @@
 # 給在此專案工作的 dot／agent
 
-這是部署套件，不是已安裝的bridge。先讀README、docs/VERIFIED_RECORD.md、docs/BRIDGE_CONTRACT.md。使用繁體中文回報。
+**繁體中文** | [English](AGENTS.en.md)
+
+這是部署套件，不是已安裝的bridge。先讀README、docs/VERIFIED_RECORD.md、docs/BRIDGE_CONTRACT.md或其英文版。依使用者選擇的繁體中文或英文回報。
 
 ## 部署入口
 

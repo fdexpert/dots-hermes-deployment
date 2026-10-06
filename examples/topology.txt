@@ -1,14 +1,24 @@
 A（案例已驗證；example是新機占位）
+A (case verified; example values are placeholders for new hosts)
 Dots
   → example-caller Mac執行器（案例中介 Mac）
   → stdio MCP a2a_bridge.py（完整來源未取得）
   → example-hermes.example-tailnet.ts.net HTTPS10000（tailnet-only Serve）
   → example-target Mac 127.0.0.1:9900 Hermes A2A/gateway（案例Hermes Mac）
+English: Dots → connected intermediary Mac executor → stdio MCP a2a_bridge.py
+         (complete source not obtained) → tailnet-only Serve HTTPS10000
+         → target Hermes Mac loopback 127.0.0.1:9900 A2A/gateway.
 
 B（本機執行與HTTP已驗證，Hermes派工尚未驗證）
+B (local execution/HTTP verified; Hermes task dispatch unverified)
 Dots → example-target Mac執行器 → 經驗證本機client → 127.0.0.1:9900
 不需要中介Mac；純本機路徑不需要Serve。
+English: Dots → target Mac executor → verified local client → 127.0.0.1:9900.
+No intermediary Mac; a local-only path does not need Serve.
 
 C（僅評估，未成功）
+C (evaluated only, unsuccessful)
 Dots cloud runtime → userspace proxy/socket/egress/持久性待解 → tailnet
 不提供可部署承諾或啟動腳本。
+English: Dots cloud runtime → unresolved userspace proxy/socket/egress/persistence → tailnet.
+No deployment promise or startup script.

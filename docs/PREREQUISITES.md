@@ -1,5 +1,7 @@
 # 前置需求、版本與安裝來源
 
+**繁體中文** | [English](PREREQUISITES.en.md)
+
 ## 本套件驗證範圍
 
 2026-10-06 的 Hermes Mac 為 macOS 26.6.2、arm64。套件工具以該機 Python 3.14.5 驗證；Tailscale CLI 為 1.102.4。本機 Hermes checkout 的 `requires-python` 為 `>=3.11,<3.15`，但這不是 中介 Mac bridge 的版本需求。Hermes 已運行版本／服務 owner 與 checkout 可能不同；不可把 checkout SHA 當成 gateway 正在執行的版本。

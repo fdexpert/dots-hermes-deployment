@@ -1,5 +1,7 @@
 # 故障排查
 
+**繁體中文** | [English](TROUBLESHOOTING.en.md)
+
 | 症狀 | 核對順序 | 安全處置 |
 | --- | --- | --- |
 | Connection refused | task 是否跑在正確機器；loopback 9900是否監聽；gateway/profile／port；Serve target | 先做唯讀診斷；不改0.0.0.0、不kill未知程序、不盲目重啟。 |

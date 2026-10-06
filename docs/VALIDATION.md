@@ -1,10 +1,12 @@
 # 四層驗收矩陣
 
+**繁體中文** | [English](VALIDATION.en.md)
+
 | 層 | 目的 | 測法／通過條件 | 不能推論 |
 | --- | --- | --- | --- |
 | 1 設定 | 身份／最小信任正確 | 本機私密核對：具名 caller、獨立 peer token、非空 trust、allow-all false、loopback、無 env trust 覆寫、placeholder 全替換 | 不能證明 process 已載入新設定 |
 | 2 程序 | 正確主機／版本／單一 listener | Dots task 環境正確；gateway awake／運行；lsof 確認 loopback 9900；A 的 Serve 對指定 port／target且 tailnet-only；bridge `tools/list` schema正確 | 本機 shell success 不證明 Hermes 派工 |
-| 3 HTTP＋認證 | DNS/TLS/card 可達且 general RPC 認證／trust生效 | health/card 名称吻合；card URL可達或已明確覆蓋；無認證安全 probe被拒絕；具名正確 token 的 probe回預期 method-not-found；保留身份general RPC拒絕 | GET 200 可公開取得，不足以證明身份、trust或派工 |
+| 3 HTTP＋認證 | DNS/TLS/card 可達且 general RPC 認證／trust生效 | health/card 名稱吻合；card URL可達或已明確覆蓋；無認證安全 probe被拒絕；具名正確 token 的 probe回預期 method-not-found；保留身份general RPC拒絕 | GET 200 可公開取得，不足以證明身份、trust或派工 |
 | 4 實際派工 | 授權路徑端到端 | 使用者另外授權後，向單一目標只傳一次下列原文；回 HERMES_OK、completed、無 tool calls並記錄耗時／狀態 | 不能推論長任務、所有工具或所有 OS 均已通過 |
 
 ## 第三層命令
@@ -33,6 +35,8 @@ python3 -B scripts/diagnose.py auth --base-url https://example-hermes.example-ta
 ## 第四層：僅一次原文
 
 > 請只回覆 HERMES_OK，不使用工具、不修改檔案、不對外聯絡
+
+兩個語言版本均使用上方繁體中文作為唯一驗收輸入；英文版另附意思說明，不替換原文。
 
 透過經核對 schema的 `fleet_ask`／本機 client，由操作者另外授權。預設腳本不提供此功能。本次建立文檔沒有派工驗證。
 

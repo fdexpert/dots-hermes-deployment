@@ -1,6 +1,8 @@
 # 來源、核對日期與命令依據
 
-核對日期：2026-10-06 UTC。未讀取真 `.env`、client registry、憑證值或日誌全文；未SSH 中介 Mac。來源程式不打包进kit。
+**繁體中文** | [English](SOURCES.en.md)
+
+核對日期：2026-10-06 UTC。未讀取真 `.env`、client registry、憑證值或日誌全文；未SSH 中介 Mac。來源程式不打包進kit。
 
 ## 本機非秘密來源
 

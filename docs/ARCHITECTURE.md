@@ -1,5 +1,7 @@
 # 架構與角色
 
+**繁體中文** | [English](ARCHITECTURE.en.md)
+
 ## A：中介 Mac 與遠端 Hermes
 
 ```text

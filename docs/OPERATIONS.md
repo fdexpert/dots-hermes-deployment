@@ -1,5 +1,7 @@
 # 備份、還原與停機風險
 
+**繁體中文** | [English](OPERATIONS.en.md)
+
 kit是可分享的無秘密專案，**不是可還原現有機器的完整備份**。server秘密、client registry、模型授權、tailnet登入與 app 配對由使用者另存受控加密位置；本次未讀取或建立此類備份。
 
 ## 部署前
@@ -22,6 +24,6 @@ gateway start/stop/restart影響同gateway的所有平台；正在等待的A2A�
 
    先核對目前CLI `off`語法與原flags，禁止全域`serve reset`。原已有此entry時應恢復原entry，不能直接off。
 4. 需要重新啟動gateway才生效時，重新確認停機窗口／正式supervisor，沿原安裝owner方式處理，不啟第二個dispatcher或強制替換。
-5. 重跑設定／程序／HTTP＋認證；实際派工驗收另授權一次。未知舊任務先人工查明再决定是否重啟工作。
+5. 重跑設定／程序／HTTP＋認證；實際派工驗收另授權一次。未知舊任務先人工查明再決定是否重啟工作。
 
 還原乾淨來源時保留local_readonly限制與其他平台設定；不要整份覆寫安全檔或盲目`git reset --hard`。機器遷移是新部署與重新授權，不是將既有task與所有secret一起複製。

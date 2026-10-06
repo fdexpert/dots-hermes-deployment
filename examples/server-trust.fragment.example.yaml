@@ -1,5 +1,7 @@
 # 具名最小信任；先完成獨立peer credential與trust再授權改false。
+# Named minimum trust; configure distinct peer credentials/trust before an authorized change to false.
 # 保留有效config其他a2a keys，不移除local-readonly安全程式。
+# Preserve other effective a2a keys and local-readonly security code.
 a2a:
   trusted_peers:
     - example-caller

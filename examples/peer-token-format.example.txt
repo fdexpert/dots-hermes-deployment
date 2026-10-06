@@ -1,5 +1,9 @@
 # 格式示意，全部是無效placeholder；不可直接載入。
+# Format illustration with invalid placeholders only; do not load directly.
 # 逗號分隔name:token，不是JSON。現有合法項目須保留。
+# Comma-separated name:token, not JSON; preserve existing valid entries.
 # REPLACE_WITH_ACTUAL_RESERVED_IDENTITY須從實際server安全原始碼核對固定身份，不能派工。
+# Check that fixed reserved identity in actual server security source; it cannot dispatch tasks.
 A2A_PEER_TOKENS=example-caller:REPLACE_WITH_CALLER_PRIVATE_TOKEN,REPLACE_WITH_ACTUAL_RESERVED_IDENTITY:REPLACE_WITH_DISTINCT_LOCAL_PRIVATE_TOKEN
 # 每個身份獨立token；使用者在kit之外的私密介面配置。
+# Distinct token per identity; user configures privately outside the kit.

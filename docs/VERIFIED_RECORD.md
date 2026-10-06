@@ -1,5 +1,7 @@
 # 已驗證部署紀錄與未驗證清單
 
+**繁體中文** | [English](VERIFIED_RECORD.en.md)
+
 日期均為UTC。公開版只保存去識別摘要；「中介 Mac／Hermes Mac」是通用角色，原機器名稱、身份、服務標籤與本機執行標記中的識別已省略，不是新部署預設值。
 
 | 日期 | 證據／結果 | 範圍 |
@@ -12,6 +14,8 @@
 | 2026-10-06 | Hermes Mac：macOS26.6.2 arm64；獨立Dots本機task回固定執行標記、exit0；health/card200且identity吻合（原標記與identity中的識別已省略） | B電腦直連／HTTP已驗證；未測本機Hermes派工，未真正關中介 Mac再測。 |
 | 2026-10-06 | 原card宣告loopback；A bridge用registry HTTPS覆蓋 | 通用A2A client不一定自動覆蓋。 |
 | 2026-10-06（本套件） | 非秘密checkout原始碼核對、Python/Tailscale盤點、新增套件離線驗證 | 未連線派工／修改服務；詳見SOURCES與DELIVERY_VALIDATION。 |
+| 2026-10-06（0.2.0發布） | 去識別kit另經授權發布至公開GitHub；已核對遠端visibility、main commit與38檔tree | 只發布套件來源，未部署／配置憑證或新增Hermes驗收。 |
+| 2026-10-06（0.3.0雙語版） | 每份文件加入完整英文對照、雙語導覽／範本註解與離線／包裝檢查 | 文件更新，技術命令與runtime行為不變；見[交付驗證](../DELIVERY_VALIDATION.md)。 |
 
 ## 尚未驗證
 
@@ -21,6 +25,6 @@
 - Linux／Windows／Intel Mac／其他OS或架構的整套部署。
 - 長任務、所有工具、複合profile、多caller、服務重啟後task恢復與完整pytest suite。
 - fleet_ask逾時後可靠查回／去重；server GetTask存在不等於bridge已提供此流程。
-- Dots app的固定最低build、GitHub repo目標／可見性／發布。本套件不承諾只登入dot就無人值守部署。
+- Dots app的固定最低build。本套件不承諾只登入dot就無人值守部署。
 
 既有紀錄與目前原始碼觀察分開；本次未重演原修復／派工，不改寫既有成功證據為新驗收。[原始碼來源](SOURCES.md)

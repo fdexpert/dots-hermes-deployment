@@ -1,9 +1,13 @@
 # 非秘密、schema pending；不是原bridge已驗證的完整設定。
+# Secret-free, schema pending; not verified complete configuration for the original bridge.
 # caller_id與agents.<alias>.token意義有案例證據。
+# Case evidence confirms caller_id and agents.<alias>.token semantics.
 # url鍵名稱／loader尚未取得，以下只是預期資料模型，需來源核對。
+# URL key/loader unavailable; this expected data model needs source verification.
 caller_id: example-caller
 agents:
   example-target:
     url: https://example-hermes.example-tailnet.ts.net:10000
     token: REPLACE_WITH_RAW_CALLER_PRIVATE_TOKEN
 # 真registry在kit外；token不加Bearer，不加name:前綴。
+# Real registry stays outside the kit; no Bearer or name: prefix in the token value.

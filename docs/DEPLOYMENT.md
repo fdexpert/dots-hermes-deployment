@@ -1,5 +1,7 @@
 # 詳細部署順序
 
+**繁體中文** | [English](DEPLOYMENT.en.md)
+
 以下是**未在本次執行**的操作者步驟。命令已核對本機 parser／官方文件；新版本先執行 `--help` 核對。所有既有服務變更先評估停機，不能直接在案例機套用。
 
 ## 1. 記錄架構與授權
@@ -74,7 +76,7 @@ tailscale serve status
 
 ## 5B. Dots 直接連接 Hermes Mac
 
-在該機 ChatGPT app 的 dot profile → Computers → Your computer → Allow access，由使用者審閱並確認。維持機器醒著、上線、app 開啟。新建獨立本機 task，檢查實際環境；可授權只执行 `printf 'EXAMPLE_LOCAL_EXEC_OK\n'` 確認本機執行，這不是 Hermes 派工。
+在該機 ChatGPT app 的 dot profile → Computers → Your computer → Allow access，由使用者審閱並確認。維持機器醒著、上線、app 開啟。新建獨立本機 task，檢查實際環境；可授權只執行 `printf 'EXAMPLE_LOCAL_EXEC_OK\n'` 確認本機執行，這不是 Hermes 派工。
 
 B 的本機 A2A client 需另外取得與驗證，使用 loopback URL／新具名 caller credential。B 只做本機派工不需 Serve；不要為方便移除 token／trust。若重用已驗證 bridge 原始碼，必須重新核對本機路徑、registry URL 與身份，不能宣稱本套件已附它。
 

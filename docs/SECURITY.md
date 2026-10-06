@@ -1,5 +1,7 @@
 # 安全與憑證交接
 
+**繁體中文** | [English](SECURITY.en.md)
+
 ## 最小信任
 
 - Hermes 只監聽 `127.0.0.1`；A 用 Tailscale Serve tailnet-only HTTPS 反向代理。tailnet grants／ACL 只允許所需 caller 到 target 的 HTTPS port；不要配置 Funnel、公開 ingress 或寬泛全員放行。
@@ -22,4 +24,4 @@
 
 ## 權限邊界
 
-安裝 app、允許 Dots 電腦存取、加入 tailnet、調整 grants／HTTPS 與啟動服務均需各自授權。macOS 的檔案存取／自動化／Computer Use 權限只按任務需要開啟；純 shell／A2A 不推定需要全磁碟、螢幕或全域 automation。既有服务／安全設定／憑證不屬於本次套件建立的修改範圍。
+安裝 app、允許 Dots 電腦存取、加入 tailnet、調整 grants／HTTPS 與啟動服務均需各自授權。macOS 的檔案存取／自動化／Computer Use 權限只按任務需要開啟；純 shell／A2A 不推定需要全磁碟、螢幕或全域 automation。既有服務／安全設定／憑證不屬於本次套件建立的修改範圍。

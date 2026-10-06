@@ -1,6 +1,8 @@
 # Dots × Hermes 部署套件
 
-版本：0.2.0｜整理與核對日期：2026-10-06（UTC）｜主文件：繁體中文
+**繁體中文** | [English](README.en.md)
+
+版本：0.3.0｜整理與核對日期：2026-10-06（UTC）｜語言：繁體中文與英文
 
 這是供其他機器重用的部署專案：包含架構決策、逐步部署手冊、無秘密範本、唯讀診斷工具、離線測試與驗收表。它不包含完整中介 bridge，也不包含任何現存憑證、registry、備份或日誌。套件製作沒有部署到新機或修改現有服務；GitHub發布是另外授權的步驟，見[公開檢查](PUBLICATION_AUDIT.md)。
 
@@ -54,3 +56,5 @@ python3 -B scripts/diagnose.py card --base-url https://example-hermes.example-ta
 ## 交付邊界
 
 本套件實作的是安全診斷與包裝驗證；YAML／環境設定是增量範本。完整 stdio bridge、其 MCP client 登錄方式與依賴鎖定待取得來源。沒有自動部署、修安全設定或自動發出 HERMES_OK 的腳本。已知 `fleet_ask` 同步等待約 300 秒，逾時後缺完整查回流程；未知結果不得重送。直接執行器需要 Hermes Mac 醒著、上線、app 運作。替換 Dots 個人電腦選擇不會搬遷既有 task。[證據與限制](docs/VERIFIED_RECORD.md)
+
+每份文件都有完整英文對照與語言切換；兩版共用技術欄位、命令及驗收原文。範本註解與拓撲提供雙語說明，CLI 輸出維持英文。

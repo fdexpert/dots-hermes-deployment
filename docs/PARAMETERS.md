@@ -1,5 +1,7 @@
 # 角色與可替換參數
 
+**繁體中文** | [English](PARAMETERS.en.md)
+
 先填 [非秘密部署計畫](../examples/deployment-plan.example.json)。這是套件規劃格式，不是 Hermes／bridge 可直接載入的設定。
 
 | 參數／角色 | example 值 | 實際用途／核對 |

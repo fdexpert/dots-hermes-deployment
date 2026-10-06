@@ -1,11 +1,13 @@
 # stdio bridge 介面契約與來源缺口
 
+**繁體中文** | [English](BRIDGE_CONTRACT.en.md)
+
 ## 已知契約（案例紀錄，非完整 schema）
 
 | 介面 | 已確認 | 未取得／應核對 |
 | --- | --- | --- |
 | process transport | Python stdio MCP `a2a_bridge.py` | Python／MCP SDK／依賴 lock、啟動 flags／cwd、stdout 清潔性 |
-| registry | `agents.yaml`、`caller_id`、`agents.<target>.token` 原始 token | 完整 YAML loader、URL 欄位名称、必要 peer 欄位、timeout 設定名 |
+| registry | `agents.yaml`、`caller_id`、`agents.<target>.token` 原始 token | 完整 YAML loader、URL 欄位名稱、必要 peer 欄位、timeout 設定名 |
 | MCP tool | 名稱 `fleet_ask`、遠端節點選擇、文字訊息、同步結果 | `tools/list` 的完整 input schema；不要猜 `agent`／`node`／`target` 的參數名 |
 | HTTP | registry HTTPS 覆蓋案例 card 的 loopback URL，帶 bearer credential | 覆蓋優先序、card v1／legacy 相容性、TLS／redirect 處理 |
 | 派工結果 | HTTP 200、TASK_STATE_COMPLETED、回覆文字、耗時、遠端 tool calls | schema／錯誤 mapping／task lookup完整流程 |

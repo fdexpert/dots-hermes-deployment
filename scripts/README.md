@@ -1,5 +1,7 @@
 # 工具與離線測試
 
+**繁體中文** | [English](README.en.md)
+
 只使用Python stdlib、3.11以上；不安裝dependency、不讀有效server/client config、不執行Hermes CLI。network工具只接受明確URL，不自動掃描tailnet，不發SendMessage或任何派工。
 
 ## diagnose.py
@@ -31,7 +33,7 @@ python3 -B scripts/validate_kit.py --zip /absolute/path/dots-hermes-deployment-k
 
 檢查manifest完整／顯式檔名、symlink、禁止路徑、Python AST、JSON、Markdown內部連結與秘密模式。ZIP採相同allowlist，拒絕多餘／缺少／重複／越界項目；內容與kit逐檔比對。掃描只是輔助，不能保證所有未知秘密格式都能識別；本次來源本就不讀秘密且只納入新建檔案。
 
-`--public`額外拒絕email、個人home路徑、私人IPv4／非example tailnet DNS与UUID。工作樹檢查忽略根目錄Git管理的`.git`metadata，以支援正常clone；ZIP永遠排除`.git`。發布前的tracked／commit歷史仍需單獨全量掃描，這個選項不代替歷史審查。
+`--public`額外拒絕email、個人home路徑、私人IPv4／非example tailnet DNS與UUID。工作樹檢查忽略根目錄Git管理的`.git`metadata，以支援正常clone；ZIP永遠排除`.git`。發布前的tracked／commit歷史仍需單獨全量掃描，這個選項不代替歷史審查。
 
 ## tests
 

@@ -1,4 +1,5 @@
 # 增量合併片段；不可覆蓋整份有效config。
+# Incremental merge fragment; never overwrite the complete effective config.
 gateway:
   platforms:
     a2a:

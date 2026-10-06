@@ -1,8 +1,8 @@
-# 檔案清單
+# File list
 
-**繁體中文** | [English](FILES.en.md)
+[繁體中文](FILES.md) | **English**
 
-共 60 個檔案，其中22組繁體中文／英文文件；ZIP只有這些新建非秘密檔案。
+60 files, including 22 pairs of Traditional Chinese/English documents. The ZIP contains only these newly created non-secret files.
 
 ```text
 .gitignore
