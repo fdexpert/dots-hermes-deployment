@@ -2,9 +2,21 @@
 
 [繁體中文](README.md) | **English**
 
+> **2026-10-08 documentation supplement (software remains 0.4.0): [D: private MCP / Tunnel persistent-worker CLI](docs/VERIFIED_RECORD.en.md).** A is the historical intermediary-Mac route; B is the 0.4.0 desktop-executor CLI → loopback A2A route. D is a separate new route, not the still-unverified C cloud-tailnet experiment. Read the desktop/native-MCP limitations below within their 2026-10-06 A/B scope, not as D limitations.
+
 Version: 0.4.0 | Compiled and checked: 2026-10-06 (UTC) | Languages: Traditional Chinese and English
 
 This reusable project includes an original Python stdio MCP/CLI bridge, dry-run isolated installer, secret-free templates, and acceptance guides. Original intermediary source remains unavailable; this is not a port. No existing credentials, registry, backups, or logs are included. Start with [Mac mini installation](docs/MAC_MINI_BRIDGE.en.md). Clean-prefix installation and real Hermes CLI/standard stdio MCP health/card passed; one authenticated B local task also PASS: HERMES_OK, HTTP 200/completed, 7.69 seconds, zero agent tool calls. New hardware/accounts and native Dots MCP remain untested; see [acceptance](docs/ACCEPTANCE_2026-10-06.en.md). The local case separately authorized dedicated caller trust and required restart; the user personally configured credentials. Version 0.4.0 source is updated in the [existing GitHub project](https://github.com/fdexpert/dots-hermes-deployment); see [publication audit](PUBLICATION_AUDIT.en.md).
+
+## 2026-10-08: independent channel and acceptance boundaries
+
+Currently evidenced route: `dot → private MCP plugin → Secure MCP Tunnel → host stdio MCP worker → local Hermes`. Historical A/B routes require desktop; this independent channel does not mean the existing installer can install tunnels. No plugin configuration schema is assumed.
+
+The main web/macOS conversation sent a fresh nonce echo directly through the connector: actual result matched, exit 0, about 31 seconds. The user reported ChatGPT desktop was not open on either the intermediary Mac or the Hermes Mac. This closed-desktop condition was not independently verified by process inspection; this edit did not repeat the test. Mobile, new machines, restart recovery, and long-task reliability remain unaccepted.
+
+A subsequent long documentation task explicitly ended in TimeoutError: queue/accepted is not done. Require terminal state + actual result + return code; success also requires the expected result and return code 0. Query an existing task with unknown outcome first; do not resend. This documentation-only publication retains version 0.4.0 and the 69-file manifest.
+
+Official references: [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels), [Add custom MCP server](https://developers.openai.com/api/docs/guides/custom-mcp-server). These references do not prove this kit's installation capability.
 
 ## Choose an architecture
 
@@ -13,10 +25,11 @@ This reusable project includes an original Python stdio MCP/CLI bridge, dry-run 
 | A: intermediary Mac | Dots → connected Mac executor (case: intermediary Mac) → Python stdio a2a-bridge → Tailscale Serve HTTPS :10000 → Hermes host (case: Hermes Mac), 127.0.0.1:9900 | One remote HERMES_OK task completed in the original case. New deployments can choose the kit bridge (mock passed, real path unverified); using the original bridge still requires authorized source/schema. |
 | B: direct Mac | Dots → executor on the Mac running Hermes → local execution / local A2A client → 127.0.0.1:9900 | New bridge real CLI health/card and one named authenticated task passed: HERMES_OK, 7.69 seconds, zero tools. Native Dots MCP/new hardware/accounts/actual intermediary shutdown remain untested. |
 | C: cloud runtime | Dots cloud environment → userspace networking / proxy → tailnet A2A | Socket, egress, and persistence limits were evaluated; implementation did not succeed. This is not a deployable option in this kit. |
+| D: private MCP / Tunnel | dot → private MCP plugin → Secure MCP Tunnel → host stdio MCP worker → local Hermes | Owner-reported Web test passed on 2026-10-08 with ChatGPT desktop closed on both Macs; real Hermes output contained the test nonce, about 31 seconds, exit 0. Not rerun in this documentation update; mobile/new hardware untested. See the verified record. |
 
 Dots “connect a computer” provides an executor; it does not convert stdio MCP into an HTTP MCP endpoint. HTTPS :10000 in the case is **Hermes A2A HTTP**, not MCP HTTP. See [architecture and roles](docs/ARCHITECTURE.en.md). Official Dots documentation distinguishes cloud and personal computers; the personal computer must be online with the app open, and its access permission is separate from Codex connections: [Computers and apps](https://learn.chatgpt.com/docs/dots/computers-and-apps).
 
-## Quick start
+## Quick start (A/B; see the verified record for D)
 
 1. Extract the ZIP into your own project directory. Read [prerequisites](docs/PREREQUISITES.en.md) and [security / credential handoff](docs/SECURITY.en.md). Deploy only to an authorized machine.
 2. Fill in new identities, hostnames, ports, and paths using the [parameter table](docs/PARAMETERS.en.md). Replace every `example` / `REPLACE_` value in your deployment copy. Do not reuse the case identities or tokens.
@@ -55,7 +68,7 @@ The tools reject URL credentials, queries, fragments, non-root paths, and remote
 - [Complete file list](FILES.en.md), [ZIP allowlist](MANIFEST.json)
 - [Public-release audit](PUBLICATION_AUDIT.en.md), [source and licensing boundaries](NOTICE.en.md)
 
-## Delivery boundaries
+## 0.4.0 A/B delivery boundaries (2026-10-06)
 
 The kit implements its own bridge, diagnostics, isolated installation, and package validation. YAML/environment files remain incremental templates. Original case bridge source/dependencies are still missing. The new bridge requires explicit SendMessage operation/confirmation; it does not deploy existing services, repair security, or dispatch during installation. The known `fleet_ask` synchronous wait is about 300 seconds, with no complete result-retrieval workflow after timeout; do not resend a task whose outcome is unknown. The direct executor requires the Hermes Mac to remain awake and online with the app running. Replacing the selected Dots personal computer does not migrate existing tasks. See [evidence and limitations](docs/VERIFIED_RECORD.en.md).
 

@@ -2,7 +2,9 @@
 
 **繁體中文** | [English](VERIFIED_RECORD.en.md)
 
-日期均為UTC。公開版只保存去識別摘要；「中介 Mac／Hermes Mac」是通用角色，原機器名稱、身份、服務標籤與本機執行標記中的識別已省略，不是新部署預設值。
+> **2026-10-08 文件補充：[D：私人 MCP／Tunnel 常駐 worker CLI](VERIFIED_RECORD.md)。** 保留 0.4.0 版本；A 是歷史中介 Mac，B 是桌面 CLI → loopback A2A；D 是新路徑，不是未驗證的 C。以下 B 限制不擴張為 D 限制。
+
+2026-10-05～06 的歷史日期為 UTC；2026-10-08 D 採擁有者提供的日期，不推定時區。公開版只保存去識別摘要；「中介 Mac／Hermes Mac」是通用角色，原機器名稱、身份、服務標籤與本機執行標記中的識別已省略，不是新部署預設值。
 
 | 日期 | 證據／結果 | 範圍 |
 | --- | --- | --- |
@@ -18,16 +20,28 @@
 | 2026-10-06（0.3.0雙語版） | 每份文件加入完整英文對照、雙語導覽／範本註解與離線／包裝檢查 | 文件更新，技術命令與runtime行為不變；見[交付驗證](../DELIVERY_VALIDATION.md)。 |
 | 2026-10-06（0.4.0實作） | 自製CLI/MCP對自製mock、真venv暫存prefix安裝／冪等／config保留／rollback/uninstall，51tests通過 | 新bridge未對真Hermes派工，未整合真Dots MCP client；其他新硬體／帳號待驗收，當時未commit/push。 |
 | 2026-10-06 09:44（0.4.0驗收） | 同主機乾淨prefix plan/apply／重跑／卸載通過；新bridge CLI與標準stdio MCP對真Hermes health/card均HTTP200、身份吻合；51tests再次通過 | 真認證／單次派工因未確認相容憑證BLOCKED；原生Dots MCP註冊BLOCKED。未送真訊息、未改既有服務，非新硬體／帳號；見[驗收矩陣](ACCEPTANCE_2026-10-06.md)。 |
-
 | 2026-10-06 22:18（0.4.0 B真派工） | 使用者親自交接獨立具名credential；僅新增caller trust、idle工作0後重啟，CLI→loopback Hermes一次SendMessage回HERMES_OK，HTTP200／TASK_STATE_COMPLETED、7.69秒；audit與session核對caller，保存工具呼叫0 | 不經中介Mac；新硬體／帳號、原生DotsMCP、關中介機與長任務未測。私有case IDs留本機，公開ZIP去識別，驗收時尚未commit/push；見[矩陣](ACCEPTANCE_2026-10-06.md)。 |
-
 | 2026-10-06（0.4.0公開更新） | 新bridge／隔離安裝器、24組雙語文件與已完成B驗收去識別證據更新至既有公開main；69檔allowlist，發布前離線／語法／雙語／秘密掃描 | 只更新本套件來源，無新派工／server變更；新硬體／帳號與原生DotsMCP仍未測。exact commit及CI由交付紀錄核對。 |
 
-## 尚未驗證
+## 2026-10-08 D：擁有者回報的 Web 證據
+
+擁有者回報 Web 端測試通過，兩台 Mac 的 ChatGPT desktop 均未開啟；真實 Hermes 輸出含測試 nonce，約 31 秒、exit 0。這是 D 私人 MCP／Tunnel 常駐 worker CLI 的個案證據，不是 C 雲端 tailnet 成功，也不是本次文件編輯獨立重跑。公開文件不保存 nonce、主機名、身份、私人路徑、使用者名稱或對話。行動端與新硬體未驗證；限制詳見下方驗收條件。不以此宣稱本次發布／完整驗證 PASS。
+
+### 2026-10-08 驗收條件與逾時教訓
+
+目前證實路徑：`dot → private MCP plugin → Secure MCP Tunnel → host stdio MCP worker → local Hermes`。舊 A/B 需要 desktop；獨立通道不代表舊 installer 已具備 tunnel 安裝能力，不假設 plugin config schema。
+
+主對話 web/macOS 直接透過 connector 送全新 nonce echo，actual result 匹配、exit 0、約 31 秒。使用者回報兩台 Mac 的 ChatGPT desktop 均未開；此閉桌面條件是使用者回報，並非獨立程序檢查。手機、新機、重啟恢復及長任務可靠性尚未驗收。
+
+後續長文件任務已明確 TimeoutError，說明 queue／accepted 不等於 done：必須取得 terminal state + actual result + return code；成功須結果符合預期且 return code 0。未知先 query 原任務，不重送；短 echo 成功也不代表長任務或 GitHub 發布成功。不公布 nonce 值、task ID、主機識別、私人路徑或憑證。本次維持 0.4.0 與發布 manifest 的 69 檔。
+
+官方參考：[Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)、[Add custom MCP server](https://developers.openai.com/api/docs/guides/custom-mcp-server)。不以官方指南代替本套件 installer 驗收。
+
+## 尚未驗證（按路徑區分）
 
 - 完整中介 Mac bridge的來源、依賴、registry loader、MCP input schema與移植後端到端結果。
 - B實際關閉中介Mac的實驗；單次本機CLI派工已通過且未使用中介機。
-- 原生DotsMCP註冊／派工，以及每台新硬體／帳號；本機CLI單次真認證派工已通過，不能代替其他部署。
+- 2026-10-06 B 的原生DotsMCP註冊／派工，以及每台新硬體／帳號；本機CLI單次真認證派工已通過，不能代替其他部署。D 的 Web 證據另列，不解除行動端／新硬體驗收缺口。
 - 雲端C的持久runtime/socket/egress可行性；曾評估但未成功。
 - Linux／Windows／Intel Mac／其他OS或架構的整套部署。
 - 長任務、所有工具、複合profile、多caller、服務重啟後task恢復與完整pytest suite。
